@@ -1,8 +1,0 @@
-#+title: README
-#+options: num:nil toc:nil author:nil timestamp:nil
-
-* My projects
-
-- [[https://kanishakvaidya.github.io/phd-progress][My Profile]]
-- [[https://kanishakvaidya.github.io/arch-KVOS][KVOS]]
-- [[https://kanishakvaidya.github.io/kv-arch-repo][KVOS Repository]]
