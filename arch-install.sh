@@ -37,10 +37,13 @@ install_text='
 ==================================================================
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ==================================================================
-        ' 
+        '
 echo "$install_text"
 sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
-pacman -Sy archlinux-keyring
+while ! pacman -Sy archlinux-keyring
+do
+    read -p "Can't update archlinux-keyring. Please rectify and the continue [ENTER]"
+done
 
 loadkeys us
 timedatectl set-ntp true
