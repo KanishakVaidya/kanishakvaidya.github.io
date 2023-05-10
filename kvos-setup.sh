@@ -25,7 +25,7 @@ curl -fLo /tmp/packages.md https://kanishakvaidya.github.io/arch-KVOS/static/scr
 while ! ( nvim /tmp/packages.md || vim /tmp/packages.md || micro /tmp/packages.md || nano /tmp/packages.md || vi /tmp/packages.md || $EDITOR /tmp/packages.md || $VISUAL /tmp/packages.md )
 do
     echo "No text editor found. Installing nano now. Suffer. Atleast set an EDITOR from now"
-    sudo pacman -S --noconfirm nano
+    sudo pacman -Syu --noconfirm nano
 done
 
 while ! sudo pacman -Syu --needed --noconfirm $(awk '/\- \[X\]/ {getline ; print}' /tmp/packages.md | tr "\n" " " )
