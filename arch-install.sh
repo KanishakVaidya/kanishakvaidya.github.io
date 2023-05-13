@@ -49,7 +49,7 @@ loadkeys us
 timedatectl set-ntp true
 pkgs="base linux linux-firmware linux-headers neovim opendoas networkmanager "
 
-curl -fLo /tmp/configuration-script.sh https://kanishakvaidya.github.io/arch-KVOS/static/scripts/configuration-script.sh
+curl -fLo /tmp/configuration-script.sh https://kanishakvaidya.github.io/arch-kvos/static/scripts/configuration-script.sh
 clear
 echo "$install_text"
 echo "Do you want to install grub bootloader?"
