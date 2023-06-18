@@ -47,7 +47,7 @@ done
 
 loadkeys us
 timedatectl set-ntp true
-pkgs="base linux linux-firmware linux-headers neovim opendoas networkmanager "
+pkgs="base linux linux-firmware linux-headers neovim opendoas networkmanager fzf "
 
 curl -fLo /tmp/configuration-script.sh https://kanishakvaidya.github.io/arch-kvos/static/scripts/configuration-script.sh
 clear

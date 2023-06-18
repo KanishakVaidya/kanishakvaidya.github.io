@@ -28,6 +28,8 @@ do
     sudo pacman -Syu --noconfirm nano
 done
 
+sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
+
 while ! sudo pacman -Syu --needed --noconfirm $(awk '/\- \[X\]/ {getline ; print}' /tmp/packages.md | tr "\n" " " )
 do
     read -p "Some errors occured while installing packages. Rectify them and press ENTER to continue."
