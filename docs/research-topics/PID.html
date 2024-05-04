@@ -8,27 +8,38 @@
 <title>Private Information Delivery</title>
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -63,11 +74,11 @@ function myFunction() {
 }
 </script>
 
-<div id="outline-container-orgaf02eb9" class="outline-2">
-<h2 id="orgaf02eb9">Introduction</h2>
-<div class="outline-text-2" id="text-orgaf02eb9">
+<div id="outline-container-org465630e" class="outline-2">
+<h2 id="org465630e">Introduction</h2>
+<div class="outline-text-2" id="text-org465630e">
 <p>
-The problem of <b>Private Information Delivery</b> (PID) was introduced by <i>Hua Sun</i> in ``Private Information Delivery&rsquo;&rsquo;, Vol.66, No.12, pp. 7672-7683, 2020.  10.1109/ITW44776.2019.8989217. In PID, a dataset comprised of \(K\) identically distributed messages is stored over \(N\) servers. The servers want to convey one of the \(K\) messages to a user but don&rsquo;t want the identity of message to be disclosed to the user. For example, the data stored at the servers could be medical records of patients from some hospitals. These hospitals want to send the record of one of the patients externally but want to preserve the privacy of the patient.
+The problem of <b>Private Information Delivery</b> (PID) was introduced by <i>Hua Sun</i> in ``Private Information Delivery'', Vol.66, No.12, pp. 7672-7683, 2020.  10.1109/ITW44776.2019.8989217. In PID, a dataset comprised of \(K\) identically distributed messages is stored over \(N\) servers. The servers want to convey one of the \(K\) messages to a user but don't want the identity of message to be disclosed to the user. For example, the data stored at the servers could be medical records of patients from some hospitals. These hospitals want to send the record of one of the patients externally but want to preserve the privacy of the patient.
 </p>
 
 <p>
@@ -76,20 +87,20 @@ In order to convey a message to the user, without disclosing the identity of the
 </div>
 </div>
 
-<div id="outline-container-org107c38a" class="outline-2">
-<h2 id="org107c38a">Our Contributions</h2>
-<div class="outline-text-2" id="text-org107c38a">
+<div id="outline-container-orga340e9d" class="outline-2">
+<h2 id="orga340e9d">Our Contributions</h2>
+<div class="outline-text-2" id="text-orga340e9d">
 <p>
-In the PID problems in ``Private Information Delivery&rsquo;&rsquo;, Vol.66, No.12, pp. 7672-7683, 2020.10.1109/ITW44776.2019.8989217 whole messages are stored at the servers without coding or splitting. Whereas we consider the case of distributed systems, where a message can be accessed by a proper subset of servers and messages which are available to the servers can be split and coded before storing them at the servers. By using coded storage at the servers, we establish that the message can be delivered privately to the user while requiring less storage and transmitting less data. Specifically, for a class of problems called <i>bi-regular PID</i> we characterize the capacity for \(N=K/M\) and for \(N>K/M\) we provide achievable schemes. In both the cases the rates achieved are more than the rates achievable with the replicated systems.
+In the PID problems in ``Private Information Delivery'', Vol.66, No.12, pp. 7672-7683, 2020.10.1109/ITW44776.2019.8989217 whole messages are stored at the servers without coding or splitting. Whereas we consider the case of distributed systems, where a message can be accessed by a proper subset of servers and messages which are available to the servers can be split and coded before storing them at the servers. By using coded storage at the servers, we establish that the message can be delivered privately to the user while requiring less storage and transmitting less data. Specifically, for a class of problems called <i>bi-regular PID</i> we characterize the capacity for \(N=K/M\) and for \(N>K/M\) we provide achievable schemes. In both the cases the rates achieved are more than the rates achievable with the replicated systems.
 </p>
 </div>
 
-<div id="outline-container-orga23d8f0" class="outline-3">
-<h3 id="orga23d8f0">Publications</h3>
-<div class="outline-text-3" id="text-orga23d8f0">
+<div id="outline-container-org977d1a9" class="outline-3">
+<h3 id="org977d1a9">Publications</h3>
+<div class="outline-text-3" id="text-org977d1a9">
 <ul class="org-ul">
-<li>Kanishak Vaidya and B. Sundar Rajan, ``Private Information Delivery with Coded Storage,&rsquo;&rsquo; 2022 IEEE International Symposium on Information Theory, 2022, pp. 2011-2015, doi: 10.1109/ISIT50566.2022.9834634.</li>
-<li>Kanishak Vaidya and B. Sundar Rajan, ``Private Information Delivery with Coded Storage,&rsquo;&rsquo; ArXiV, Feburary 8, 2022. arXiv:2202.03803.</li>
+<li>Kanishak Vaidya and B. Sundar Rajan, ``Private Information Delivery with Coded Storage,'' 2022 IEEE International Symposium on Information Theory, 2022, pp. 2011-2015, doi: 10.1109/ISIT50566.2022.9834634.</li>
+<li>Kanishak Vaidya and B. Sundar Rajan, ``Private Information Delivery with Coded Storage,'' ArXiV, Feburary 8, 2022. arXiv:2202.03803.</li>
 </ul>
 </div>
 </div>

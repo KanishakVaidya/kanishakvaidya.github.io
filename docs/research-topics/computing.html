@@ -8,27 +8,38 @@
 <title>Distributed Computing</title>
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="../style.css" />
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -63,11 +74,11 @@ function myFunction() {
 }
 </script>
 
-<div id="outline-container-orgd8b6465" class="outline-2">
-<h2 id="orgd8b6465">Coded Compting</h2>
-<div class="outline-text-2" id="text-orgd8b6465">
+<div id="outline-container-org58a875a" class="outline-2">
+<h2 id="org58a875a">Coded Compting</h2>
+<div class="outline-text-2" id="text-org58a875a">
 <p>
-We considered the variation of coded computation in which a master node wants to multiply two matrices \(\mathbf{A}\) and \(\mathbf{B}_D\) where \(\mathbf{B}_D\) is a matrix in the library of matrices \(\mathcal{B}\), containing \(M\) matrices \(\{ \textbf{B}_m \}_{m = 1}^M\). The matrix \(\textbf{A}\) is exclusively owned by the master and library \(\mathcal{B}\) is exclusively shared by non-colluding workers. Master encodes \(\textbf{A}\) and sends encoded data to workers, along with queries that request them to encode the library \(\mathcal{B}\) and to perform computation on the encoded data. After master recovers \(\textbf{AB}_D\) from the returned computations, the workers must not be able to identify that \(\textbf{B}_D\) was desired by the master, i.e. master&rsquo;s <i>demand privacy</i> is ensured. Also the contents of \(\textbf{A}\) is hidden from the workers, thus ensuring <i>data privacy</i>.
+We considered the variation of coded computation in which a master node wants to multiply two matrices \(\mathbf{A}\) and \(\mathbf{B}_D\) where \(\mathbf{B}_D\) is a matrix in the library of matrices \(\mathcal{B}\), containing \(M\) matrices \(\{ \textbf{B}_m \}_{m = 1}^M\). The matrix \(\textbf{A}\) is exclusively owned by the master and library \(\mathcal{B}\) is exclusively shared by non-colluding workers. Master encodes \(\textbf{A}\) and sends encoded data to workers, along with queries that request them to encode the library \(\mathcal{B}\) and to perform computation on the encoded data. After master recovers \(\textbf{AB}_D\) from the returned computations, the workers must not be able to identify that \(\textbf{B}_D\) was desired by the master, i.e. master's <i>demand privacy</i> is ensured. Also the contents of \(\textbf{A}\) is hidden from the workers, thus ensuring <i>data privacy</i>.
 </p>
 
 <p>
@@ -89,11 +100,11 @@ Our scheme uses Reed-Solomon codes to achieve computational redundancy and trade
 </p>
 </div>
 
-<div id="outline-container-orgbce7ba2" class="outline-3">
-<h3 id="orgbce7ba2">Publications</h3>
-<div class="outline-text-3" id="text-orgbce7ba2">
+<div id="outline-container-org041460b" class="outline-3">
+<h3 id="org041460b">Publications</h3>
+<div class="outline-text-3" id="text-org041460b">
 <ul class="org-ul">
-<li>Kanishak Vaidya and B. Sundar Rajan, <b>``Distributed Computation: Privacy, Straggler Mitigation, and Security Against Colluding Workers,&rsquo;&rsquo;</b> 2020 - 2020 IEEE Global Communications Conference, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9322092. [<a href="https://ieeexplore.ieee.org/document/9322092">IEEE</a>]</li>
+<li>Kanishak Vaidya and B. Sundar Rajan, <b>``Distributed Computation: Privacy, Straggler Mitigation, and Security Against Colluding Workers,''</b> 2020 - 2020 IEEE Global Communications Conference, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9322092. [<a href="https://ieeexplore.ieee.org/document/9322092">IEEE</a>]</li>
 </ul>
 </div>
 </div>
