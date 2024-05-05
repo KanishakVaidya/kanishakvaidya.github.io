@@ -1,19 +1,10 @@
 #+title: Distributed Computing
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
-
-#+begin_export html
-<ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="../index.html">Home</a>
-  <a class="active" href="../research-topics/index.html">Research Topics</a>
-  <a href="../publications.html">Publications</a>
-  <a href="../projects/index.html">Projects</a>
-  <a href="../bio.html">Bio</a>
-</ul>
-#+end_export
-
 #+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#research")[0].classList.add("active"); </script>
+#+end_export
 
 * Coded Compting
 We considered the variation of coded computation in which a master node wants to multiply two matrices \(\mathbf{A}\) and \(\mathbf{B}_D\) where \(\mathbf{B}_D\) is a matrix in the library of matrices \(\mathcal{B}\), containing \(M\) matrices \(\{ \textbf{B}_m \}_{m = 1}^M\). The matrix \(\textbf{A}\) is exclusively owned by the master and library \(\mathcal{B}\) is exclusively shared by non-colluding workers. Master encodes \(\textbf{A}\) and sends encoded data to workers, along with queries that request them to encode the library \(\mathcal{B}\) and to perform computation on the encoded data. After master recovers \(\textbf{AB}_D\) from the returned computations, the workers must not be able to identify that \(\textbf{B}_D\) was desired by the master, i.e. master's /demand privacy/ is ensured. Also the contents of \(\textbf{A}\) is hidden from the workers, thus ensuring /data privacy/.

@@ -1,19 +1,10 @@
 #+title: HOME
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
-
-#+begin_export html
-<ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="./index.html">Home</a>
-  <a href="./research-topics/index.html">Research Topics</a>
-  <a class="active" href="./publications.html">Publications</a>
-  <a href="./projects/index.html">Projects</a>
-  <a href="./bio.html">Bio</a>
-</ul>
-#+end_export
-
 #+INCLUDE: ./logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#publications")[0].classList.add("active"); </script>
+#+end_export
 
 * Journals
 - Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs''* in IEEE Transactions on Communications, doi: 10.1109/TCOMM.2023.3325473. [[[https://ieeexplore.ieee.org/document/10288207][IEEE]]]

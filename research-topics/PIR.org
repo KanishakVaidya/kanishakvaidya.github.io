@@ -1,19 +1,10 @@
 #+title: Private Information Retrieval
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
-
-#+begin_export html
-<ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="../index.html">Home</a>
-  <a class="active" href="../research-topics/index.html">Research Topics</a>
-  <a href="../publications.html">Publications</a>
-  <a href="../projects/index.html">Projects</a>
-  <a href="../bio.html">Bio</a>
-</ul>
-#+end_export
-
 #+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#research")[0].classList.add("active"); </script>
+#+end_export
 
 * Introduction
 The problem of Private Information Retrieval (PIR), first described by Chor et. al. in "Private information retrieval," Proceedings of IEEE 36th Annual Foundations of Computer Science, 1995, pp. 41-50, doi: 10.1109/SFCS.1995.492461., deals with privately retrieving data from a set of distributed servers. A user wishes to retrieve one file among a set of files stored across the servers. But the servers should not know the identity of the desired file. A PIR scheme that minimizes the download cost for the user is described by H. Sun and S. A. Jafar, in ``The Capacity of Private Information Retrieval,'' in IEEE Transactions on Information Theory, vol. 63, no. 7, pp. 4075-4088, July 2017, doi: 10.1109/TIT.2017.2689028. After that, the PIR problem is solved for various other settings.

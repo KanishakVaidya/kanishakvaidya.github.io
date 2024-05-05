@@ -12,19 +12,20 @@
 <body>
 <div id="content" class="content">
 <ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="./index.html">Home</a>
-  <a href="./research-topics/index.html">Research Topics</a>
-  <a href="./publications.html">Publications</a>
-  <a href="./projects/index.html">Projects</a>
-  <a class="active" href="./bio.html">Bio</a>
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
 </ul>
 
 <div class="logo">
 <a class="logo__link" title="Kanishak Vaidya" rel="home">
 <div class="logo__item logo__text">
 <div class="logo__title">Kanishak Vaidya</div>
-<div class="logo__tagline">PhD fellow in IISc Bangalore</div>
+<div class="logo__tagline">Senior Engineer, Qualcomm Bangalore.</div>
 </div></a>
 <!-- div style="float:right;">
   <div class="toggle-light light" ></div >
@@ -41,12 +42,13 @@ function myFunction() {
   }
 }
 </script>
+<script> document.querySelectorAll("#mySideNav a#bio")[0].classList.add("active"); </script>
 
 <div id="outline-container-org939884b" class="outline-2">
 <h2 id="org939884b">About Kanishak Vaidya</h2>
 <div class="outline-text-2" id="text-org939884b">
 
-<div id="org9b04d0e" class="figure">
+<div id="org10150af" class="figure">
 <p><img src="./static/profile-transparent.png" alt="profile-transparent.png" width="300px" height="auto" style="float:left;margin-right:60px" />
 </p>
 </div>
@@ -166,7 +168,7 @@ Kanishak Vaidya received the B.Tech. degree in Electronics and Communication Eng
 <h3 id="orgb111bdb">PhD Guide</h3>
 <div class="outline-text-3" id="text-orgb111bdb">
 
-<div id="org6fb5d55" class="figure">
+<div id="org5615984" class="figure">
 <p><img src="./static/guide.jpg" alt="guide.jpg" width="300" style="float:left;margin-right:60px" />
 </p>
 </div>

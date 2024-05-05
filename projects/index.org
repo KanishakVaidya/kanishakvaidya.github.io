@@ -1,19 +1,10 @@
 #+title: Projects
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
-
-#+begin_export html
-<ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="../index.html">Home</a>
-  <a href="../research-topics/index.html">Research Topics</a>
-  <a href="../publications.html">Publications</a>
-  <a class="active" href="./index.html">Projects</a>
-  <a href="../bio.html">Bio</a>
-</ul>
-#+end_export
-
 #+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#projects")[0].classList.add("active"); </script>
+#+end_export
 
 * [[./mtech.org][M.Tech Projects]]
 - *Communications*: OFDM simulation and analysis on Simulink and MATLAB

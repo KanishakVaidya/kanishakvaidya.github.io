@@ -12,19 +12,20 @@
 <body>
 <div id="content" class="content">
 <ul class="sidebar" id="mySideNav">
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a href="../index.html">Home</a>
-  <a href="../research-topics/index.html">Research Topics</a>
-  <a href="../publications.html">Publications</a>
-  <a class="active" href="./index.html">Projects</a>
-  <a href="../bio.html">Bio</a>
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
 </ul>
 
 <div class="logo">
 <a class="logo__link" title="Kanishak Vaidya" rel="home">
 <div class="logo__item logo__text">
 <div class="logo__title">Kanishak Vaidya</div>
-<div class="logo__tagline">PhD fellow in IISc Bangalore</div>
+<div class="logo__tagline">Senior Engineer, Qualcomm Bangalore.</div>
 </div></a>
 <!-- div style="float:right;">
   <div class="toggle-light light" ></div >
@@ -41,6 +42,7 @@ function myFunction() {
   }
 }
 </script>
+<script> document.querySelectorAll("#mySideNav a#projects")[0].classList.add("active"); </script>
 
 <div id="outline-container-org68a91a4" class="outline-2">
 <h2 id="org68a91a4">Two Wheel Self Balancing Robot</h2>
