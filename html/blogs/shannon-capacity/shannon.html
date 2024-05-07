@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shannon Capacity theorem</title>
+<meta name="author" content="Kanishak Vaidya" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Shannon Capacity theorem</h1>
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+</ul>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script>
+
+<script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
+
+<div id="outline-container-org1f4b921" class="outline-2">
+<h2 id="org1f4b921">Introduction</h2>
+<div class="outline-text-2" id="text-org1f4b921">
+<p>
+Consider you are trying to quantify the <i>amount of uncertainty</i> in a random variable \(X\). For example, answer the following question: "How much uncertainty is in a dice roll? Give a specific number." The first problem in answering this question is, how do you measure "uncertainty"? Even before that we need to understand what do we mean when we say uncertainty? Although we might not give a concrete definition of uncertainty as of now, but let's put out intuition about uncertainty in words and let's see can we make some mathematical statements about our intuitions. Here are some of the questions to be answered intuitively about the uncertainty in random variables:
+</p>
+<ul class="org-ul">
+<li>There are two fair coins. One has a head and tail side, another has red and green faces. Which coin toss has more uncertainty?</li>
+<li>There are two coins, one in which head comes 75% of the time and in another head comes 25% of the time. Which of the two coin toss has more uncertainty associated to it?</li>
+<li>Which event has more uncertainty: A coin toss, or a roll of dice?</li>
+</ul>
+
+<p>
+To define a measure of uncertainty, C. E. Shannon in his work "A Mathematical Theory of Communication" took an axiomatic approach. The question is how to measure the amount of uncertainty in a random variable \(X\). First of all, if two random variables \(X\) and \(Y\) has same distribution, or even same probability mass over some set then both \(X\) and \(Y\) have same amount of uncertainty. For example, let \(X\) can take three values say \(1, 2, 3\) with probability \(\frac{1}{2}, \frac{1}{3}, \frac{1}{6}\) respectively and \(Y\) can take values \(e, \pi, \phi\) with probability \(\frac{1}{3}, \frac{1}{6}, \frac{1}{2}\) respectively, then both \(X\) and \(Y\) have same amount of uncertainty. So, first of all, its trivial to see that the measure of uncertainty should entirely depend on the set of probability masses \(\{p_{1}, p_{2}, ..., p_{M}\}\) for some discrete random variable taking \(M\) different values. (Note that the order of these probability masses doesn't matter).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1e11840" class="outline-2">
+<h2 id="org1e11840">Axioms of uncertainty</h2>
+<div class="outline-text-2" id="text-org1e11840">
+<p>
+Now, any reasonable measure of uncertainty say \(H(\mathbf{p})\) should follow the following properties:
+</p>
+<ol class="org-ol">
+<li>\(H\) should be continuous in \(\mathbf{p}\).</li>
+<li>If all the \(p_m\) are equal i.e. \(p_m = \frac{1}{M}, \forall m\), then \(H\) should be a monotonic increasing function of \(M\).</li>
+<li>If a choice be broken down into two successive choices, then the original \(H\) should be weighted sun of the individual values of \(H\) for the two choices. This means
+\[
+   H(p_1 , ... p_r, p_{r+1} , ... p_m) = p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) + p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
+   \]</li>
+</ol>
+</div>
+
+<div id="outline-container-org7d5e9a5" class="outline-3">
+<h3 id="org7d5e9a5">Entropy</h3>
+<div class="outline-text-3" id="text-org7d5e9a5">
+<p>
+In his work, Shannon showed that only family of functions that satisfies all these axioms is of the form
+\[
+H(p_1, ..., p_M) = - K \sum_{m = 1}^{M} p_m \log{p_m}
+\]
+Shannon call this function "entropy". For notational purpose we sometime refer this as the entropy of random variable \(X\) and denote it by, \(H(X)\). But we should always keep in mind that \(H(X)\) denotes the uncertainty in the distribution of \(X\).
+</p>
+
+<p>
+In the above formula, we can accomodate \(K\) in the base of the logarithm. Consider \(K = 1\), then changing the base of logarithm will just scale the quantity \(H\). Usually we take the base of the logarithm to be \(2\) and call the resulting unit a bit.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9a7199" class="outline-3">
+<h3 id="orgd9a7199">Entropy of Continuous Distributions</h3>
+<div class="outline-text-3" id="text-orgd9a7199">
+<p>
+In an analogous manner, we define the entropy of a continuous distribution with density function \(p(x)\) by:
+\[
+H(X) = - \int_{-\infty}^{\infty} p(x) \log(p(x)) dx
+\]
+</p>
+</div>
+
+<div id="outline-container-org09aca70" class="outline-4">
+<h4 id="org09aca70">Properties of Entropy of continuous distribution</h4>
+<div class="outline-text-4" id="text-org09aca70">
+<ol class="org-ol">
+<li>If \(X\) is limited to certain volume \(V\), then \(H(X)\) is maximum and equal to \(\log{V}\) when \(p(x)\) is constant \(\frac{1}{V}\) in the volume.</li>
+<li>For random variables \(X\) and \(Y\)
+\[
+   H(X, Y) \leq H(X) + H(Y)
+   \]
+with equality if and only if \(X\) and \(Y\) are independent.</li>
+<li>\(H(X, Y) = H(X) + H(Y | X) = H(Y) + H(X | Y)\)</li>
+<li>If \(p(x)\) is one-dimensional, then among all distributions with standard deviation \(\sigma\), the distribution with maximum entropy is the gaussian distribution. And the entropy of one dimensional gaussian distribution with standard deviation \(\sigma\) is given by \(H(X) = \log{\sqrt{2 \pi e}\sigma}\)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgea7f711" class="outline-2">
+<h2 id="orgea7f711">The Capacity of a continuous channel</h2>
+<div class="outline-text-2" id="text-orgea7f711">
+<p>
+In a continuous channel, the input is a continuous time function \(f(t)\) (belonging to a certain set), and the output is some perturbed version of \(f(t)\). If the input function and the output of the channel are bandlimited to a frequency band of \(W\), then the statistics of the input signal, for some time \(T\), can be determined by \(2WT\) samples \((x_1, ... x_n) \triangleq \mathbf{X}\) and statistics of output function can be determined by the \(2TW\) samples \((y_1, ... y_n) \triangleq \mathbf{Y}\) taken every \(\frac{1}{2W}\) seconds.
+</p>
+
+<p>
+The rate of transmission of information for a continuous channel is defined as
+\[
+R \triangleq H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y})
+\]
+</p>
+
+<p>
+The maximum value of \(\frac{R}{T}\) for all possible distributions on \(\mathbf{X}\) and for \(T \rightarrow \infty\) is called the capacity \(C\).
+</p>
+</div>
+
+<div id="outline-container-org5492855" class="outline-3">
+<h3 id="org5492855">Additive noise independent of signal</h3>
+<div class="outline-text-3" id="text-org5492855">
+<p>
+If the received signal is the sum of the input signal and some other independent signal (which is known as noise) then
+\[
+\mathbf{Y} = \mathbf{X} + \mathbf{N}
+\]
+Now as signal and noise are independent, the rate of transmission is
+\[
+R = H(\mathbf{Y}) - H(\mathbf{N})
+\]
+Now, because \(\mathbf{Y} = \mathbf{X} + \mathbf{N}\) we have \(H(\mathbf{X}, \mathbf{Y}) = H(\mathbf{X}, \mathbf{N})\). Expanding the left hand side, we'll get
+\[
+H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{X}) + H(\mathbf{N}) \\
+\implies R = H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
+\]
+Since noise is independent of the input signal, maximizing \(R\) means maximizing \(H(\mathbf{Y})\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9dd5881" class="outline-2">
+<h2 id="org9dd5881">Capacity of AWGN channels</h2>
+<div class="outline-text-2" id="text-org9dd5881">
+<p>
+Consider that the noise is a white thermal process and the transmitted signals are limited to certain average power \(P\). Then received power is \(P + N_0\) where \(N_0\) is the average noise power. Now, to maximize the entropy of \(\mathbf{Y}\), the received signals should also form a white noise ensemble, as this is the greatest entropy for a signal of power \(P + N_0\). So,
+\[
+H(\mathbf{Y}) = W \log{2 \pi e (P + N_0)} \\
+H(\mathbf{N}) = W \log{2 \pi e N_0}.
+\]
+This implies the channel capacity is given by
+\[
+C = H(\mathbf{Y}) - H(\mathbf{N}) = W \log{\frac{P + N_0}{N_0}} = W \log{\left(1 + \frac{P}{N_0}\right)}
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kanishak Vaidya</p>
+</div>
+</body>
+</html>

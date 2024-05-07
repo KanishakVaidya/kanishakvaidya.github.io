@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Distributed Computing</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+</ul>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script>
+<div class="logo">
+<a class="logo__link" title="Kanishak Vaidya" rel="home">
+<div class="logo__item logo__text">
+<div class="logo__title">Kanishak Vaidya</div>
+<div class="logo__tagline">Senior Engineer | Qualcomm Bangalore.</div>
+</div></a>
+<!-- div style="float:right;">
+  <div class="toggle-light light" ></div >
+</div-->
+</div>
+<script> document.querySelectorAll("#mySideNav a#research")[0].classList.add("active"); </script>
+
+<div id="outline-container-org2551d45" class="outline-2">
+<h2 id="org2551d45">Coded Compting</h2>
+<div class="outline-text-2" id="text-org2551d45">
+<p>
+We considered the variation of coded computation in which a master node wants to multiply two matrices \(\mathbf{A}\) and \(\mathbf{B}_D\) where \(\mathbf{B}_D\) is a matrix in the library of matrices \(\mathcal{B}\), containing \(M\) matrices \(\{ \textbf{B}_m \}_{m = 1}^M\). The matrix \(\textbf{A}\) is exclusively owned by the master and library \(\mathcal{B}\) is exclusively shared by non-colluding workers. Master encodes \(\textbf{A}\) and sends encoded data to workers, along with queries that request them to encode the library \(\mathcal{B}\) and to perform computation on the encoded data. After master recovers \(\textbf{AB}_D\) from the returned computations, the workers must not be able to identify that \(\textbf{B}_D\) was desired by the master, i.e. master's <i>demand privacy</i> is ensured. Also the contents of \(\textbf{A}\) is hidden from the workers, thus ensuring <i>data privacy</i>.
+</p>
+
+<p>
+We proposed a scheme that simultaneously ensures
+</p>
+<ul class="org-ul">
+<li><i>Resiliency</i> against slow worker nodes or <i>stragglers</i></li>
+<li><i>Privacy of data</i> from colluding workers</li>
+<li><i>Privacy of demand</i> against colluding workers and</li>
+<li><i>Security</i> against malicious (or erroneous) worker nodes.</li>
+</ul>
+
+<p>
+As a motivating example consider a user who is employing AI assistant, e.g. Google Assistant on its mobile phone. The user requests a recommendation from AI assistant of an item included in one of the \(M\) categories e.g. Movies, Games, Restaurants. Data for \(m^{th}\) category is represented by the matrix \(\textbf{B}_m\) and the set of all such matrices \(\{ \textbf{B}_m \}_{m=1}^M\) is the library \(\mathcal{B}\) shared by the servers. User store its preference matrix \(\textbf{A}\) and want recommendation about category represented by \(\textbf{B}_D \in \mathcal{B}\) based on \(\textbf{A}\). For that, user encodes \(\textbf{A}\) and upload encoded data to the servers in order to compute \(f(\textbf{A} , \textbf{B}_D)\). The demand privacy of user is violated if colluding servers get to know that user wants recommendation for category represented by \(\textbf{B}_D\) and data privacy is ensured by hiding the contents of \(\textbf{A}\). System is secure if even a subset of computation returned by the servers is incorrect, the user will be able to decode true computation \(f(\textbf{A}, \textbf{B}_D)\)
+</p>
+
+<p>
+Our scheme uses Reed-Solomon codes to achieve computational redundancy and trade upload and download costs for privacy and security.
+</p>
+</div>
+
+<div id="outline-container-org0589bf8" class="outline-3">
+<h3 id="org0589bf8">Publications</h3>
+<div class="outline-text-3" id="text-org0589bf8">
+<ul class="org-ul">
+<li>Kanishak Vaidya and B. Sundar Rajan, <b>``Distributed Computation: Privacy, Straggler Mitigation, and Security Against Colluding Workers,''</b> 2020 - 2020 IEEE Global Communications Conference, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9322092. [<a href="https://ieeexplore.ieee.org/document/9322092">IEEE</a>]</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
