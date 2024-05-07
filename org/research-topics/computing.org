@@ -1,0 +1,24 @@
+#+title: Distributed Computing
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
+#+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
+#+INCLUDE: ../sidenav.org
+#+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#research")[0].classList.add("active"); </script>
+#+end_export
+
+* Coded Compting
+We considered the variation of coded computation in which a master node wants to multiply two matrices \(\mathbf{A}\) and \(\mathbf{B}_D\) where \(\mathbf{B}_D\) is a matrix in the library of matrices \(\mathcal{B}\), containing \(M\) matrices \(\{ \textbf{B}_m \}_{m = 1}^M\). The matrix \(\textbf{A}\) is exclusively owned by the master and library \(\mathcal{B}\) is exclusively shared by non-colluding workers. Master encodes \(\textbf{A}\) and sends encoded data to workers, along with queries that request them to encode the library \(\mathcal{B}\) and to perform computation on the encoded data. After master recovers \(\textbf{AB}_D\) from the returned computations, the workers must not be able to identify that \(\textbf{B}_D\) was desired by the master, i.e. master's /demand privacy/ is ensured. Also the contents of \(\textbf{A}\) is hidden from the workers, thus ensuring /data privacy/.
+
+We proposed a scheme that simultaneously ensures
+- /Resiliency/ against slow worker nodes or /stragglers/
+- /Privacy of data/ from colluding workers
+- /Privacy of demand/ against colluding workers and
+- /Security/ against malicious (or erroneous) worker nodes.
+
+As a motivating example consider a user who is employing AI assistant, e.g. Google Assistant on its mobile phone. The user requests a recommendation from AI assistant of an item included in one of the \(M\) categories e.g. Movies, Games, Restaurants. Data for \(m^{th}\) category is represented by the matrix \(\textbf{B}_m\) and the set of all such matrices \(\{ \textbf{B}_m \}_{m=1}^M\) is the library \(\mathcal{B}\) shared by the servers. User store its preference matrix \(\textbf{A}\) and want recommendation about category represented by \(\textbf{B}_D \in \mathcal{B}\) based on \(\textbf{A}\). For that, user encodes \(\textbf{A}\) and upload encoded data to the servers in order to compute \(f(\textbf{A} , \textbf{B}_D)\). The demand privacy of user is violated if colluding servers get to know that user wants recommendation for category represented by \(\textbf{B}_D\) and data privacy is ensured by hiding the contents of \(\textbf{A}\). System is secure if even a subset of computation returned by the servers is incorrect, the user will be able to decode true computation \(f(\textbf{A}, \textbf{B}_D)\)
+
+Our scheme uses Reed-Solomon codes to achieve computational redundancy and trade upload and download costs for privacy and security.
+
+** Publications
+- Kanishak Vaidya and B. Sundar Rajan, *``Distributed Computation: Privacy, Straggler Mitigation, and Security Against Colluding Workers,''* 2020 - 2020 IEEE Global Communications Conference, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9322092. [[[https://ieeexplore.ieee.org/document/9322092][IEEE]]]

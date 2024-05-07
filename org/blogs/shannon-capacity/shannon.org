@@ -1,0 +1,88 @@
+#+title: Shannon Capacity theorem
+#+AUTHOR: Kanishak Vaidya
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/style.css" />
+#+OPTIONS: html-style:nil toc:nil num:nil timestamp:nil title:t
+#+INCLUDE: ../../sidenav.org
+
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
+#+end_export
+
+* Introduction
+Consider you are trying to quantify the /amount of uncertainty/ in a random variable $X$. For example, answer the following question: "How much uncertainty is in a dice roll? Give a specific number." The first problem in answering this question is, how do you measure "uncertainty"? Even before that we need to understand what do we mean when we say uncertainty? Although we might not give a concrete definition of uncertainty as of now, but let's put out intuition about uncertainty in words and let's see can we make some mathematical statements about our intuitions. Here are some of the questions to be answered intuitively about the uncertainty in random variables:
+- There are two fair coins. One has a head and tail side, another has red and green faces. Which coin toss has more uncertainty?
+- There are two coins, one in which head comes 75% of the time and in another head comes 25% of the time. Which of the two coin toss has more uncertainty associated to it?
+- Which event has more uncertainty: A coin toss, or a roll of dice?
+
+To define a measure of uncertainty, C. E. Shannon in his work "A Mathematical Theory of Communication" took an axiomatic approach. The question is how to measure the amount of uncertainty in a random variable $X$. First of all, if two random variables $X$ and $Y$ has same distribution, or even same probability mass over some set then both $X$ and $Y$ have same amount of uncertainty. For example, let $X$ can take three values say $1, 2, 3$ with probability $\frac{1}{2}, \frac{1}{3}, \frac{1}{6}$ respectively and $Y$ can take values $e, \pi, \phi$ with probability $\frac{1}{3}, \frac{1}{6}, \frac{1}{2}$ respectively, then both $X$ and $Y$ have same amount of uncertainty. So, first of all, its trivial to see that the measure of uncertainty should entirely depend on the set of probability masses $\{p_{1}, p_{2}, ..., p_{M}\}$ for some discrete random variable taking $M$ different values. (Note that the order of these probability masses doesn't matter).
+
+* Axioms of uncertainty
+Now, any reasonable measure of uncertainty say $H(\mathbf{p})$ should follow the following properties:
+1. $H$ should be continuous in $\mathbf{p}$.
+2. If all the $p_m$ are equal i.e. $p_m = \frac{1}{M}, \forall m$, then $H$ should be a monotonic increasing function of $M$.
+3. If a choice be broken down into two successive choices, then the original $H$ should be weighted sun of the individual values of $H$ for the two choices. This means
+   $$
+   H(p_1 , ... p_r, p_{r+1} , ... p_m) = p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) + p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
+   $$
+
+** Entropy
+In his work, Shannon showed that only family of functions that satisfies all these axioms is of the form
+$$
+H(p_1, ..., p_M) = - K \sum_{m = 1}^{M} p_m \log{p_m}
+$$
+Shannon call this function "entropy". For notational purpose we sometime refer this as the entropy of random variable $X$ and denote it by, $H(X)$. But we should always keep in mind that $H(X)$ denotes the uncertainty in the distribution of $X$.
+
+In the above formula, we can accomodate $K$ in the base of the logarithm. Consider $K = 1$, then changing the base of logarithm will just scale the quantity $H$. Usually we take the base of the logarithm to be $2$ and call the resulting unit a bit.
+
+** Entropy of Continuous Distributions
+In an analogous manner, we define the entropy of a continuous distribution with density function $p(x)$ by:
+$$
+H(X) = - \int_{-\infty}^{\infty} p(x) \log(p(x)) dx
+$$
+
+*** Properties of Entropy of continuous distribution
+1. If $X$ is limited to certain volume $V$, then $H(X)$ is maximum and equal to $\log{V}$ when $p(x)$ is constant $\frac{1}{V}$ in the volume.
+2. For random variables $X$ and $Y$
+   $$
+   H(X, Y) \leq H(X) + H(Y)
+   $$
+   with equality if and only if $X$ and $Y$ are independent.
+3. $H(X, Y) = H(X) + H(Y | X) = H(Y) + H(X | Y)$
+4. If $p(x)$ is one-dimensional, then among all distributions with standard deviation $\sigma$, the distribution with maximum entropy is the gaussian distribution. And the entropy of one dimensional gaussian distribution with standard deviation $\sigma$ is given by $H(X) = \log{\sqrt{2 \pi e}\sigma}$
+
+* The Capacity of a continuous channel
+In a continuous channel, the input is a continuous time function $f(t)$ (belonging to a certain set), and the output is some perturbed version of $f(t)$. If the input function and the output of the channel are bandlimited to a frequency band of $W$, then the statistics of the input signal, for some time $T$, can be determined by $2WT$ samples $(x_1, ... x_n) \triangleq \mathbf{X}$ and statistics of output function can be determined by the $2TW$ samples $(y_1, ... y_n) \triangleq \mathbf{Y}$ taken every $\frac{1}{2W}$ seconds.
+
+The rate of transmission of information for a continuous channel is defined as
+$$
+R \triangleq H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y})
+$$
+
+The maximum value of $\frac{R}{T}$ for all possible distributions on $\mathbf{X}$ and for $T \rightarrow \infty$ is called the capacity $C$.
+
+** Additive noise independent of signal
+If the received signal is the sum of the input signal and some other independent signal (which is known as noise) then
+$$
+\mathbf{Y} = \mathbf{X} + \mathbf{N}
+$$
+Now as signal and noise are independent, the rate of transmission is
+$$
+R = H(\mathbf{Y}) - H(\mathbf{N})
+$$
+Now, because $\mathbf{Y} = \mathbf{X} + \mathbf{N}$ we have $H(\mathbf{X}, \mathbf{Y}) = H(\mathbf{X}, \mathbf{N})$. Expanding the left hand side, we'll get
+$$
+H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{X}) + H(\mathbf{N}) \\
+\implies R = H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
+$$
+Since noise is independent of the input signal, maximizing $R$ means maximizing $H(\mathbf{Y})$.
+
+* Capacity of AWGN channels
+Consider that the noise is a white thermal process and the transmitted signals are limited to certain average power $P$. Then received power is $P + N_0$ where $N_0$ is the average noise power. Now, to maximize the entropy of $\mathbf{Y}$, the received signals should also form a white noise ensemble, as this is the greatest entropy for a signal of power $P + N_0$. So,
+$$
+H(\mathbf{Y}) = W \log{2 \pi e (P + N_0)} \\
+H(\mathbf{N}) = W \log{2 \pi e N_0}.
+$$
+This implies the channel capacity is given by
+$$
+C = H(\mathbf{Y}) - H(\mathbf{N}) = W \log{\frac{P + N_0}{N_0}} = W \log{\left(1 + \frac{P}{N_0}\right)}
+$$

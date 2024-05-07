@@ -1,0 +1,24 @@
+#+title: Private Information Retrieval
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
+#+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
+#+INCLUDE: ../sidenav.org
+#+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#research")[0].classList.add("active"); </script>
+#+end_export
+
+* Introduction
+The problem of Private Information Retrieval (PIR), first described by Chor et. al. in "Private information retrieval," Proceedings of IEEE 36th Annual Foundations of Computer Science, 1995, pp. 41-50, doi: 10.1109/SFCS.1995.492461., deals with privately retrieving data from a set of distributed servers. A user wishes to retrieve one file among a set of files stored across the servers. But the servers should not know the identity of the desired file. A PIR scheme that minimizes the download cost for the user is described by H. Sun and S. A. Jafar, in ``The Capacity of Private Information Retrieval,'' in IEEE Transactions on Information Theory, vol. 63, no. 7, pp. 4075-4088, July 2017, doi: 10.1109/TIT.2017.2689028. After that, the PIR problem is solved for various other settings.
+
+In Private Information Retrieval (PIR) there is one user and a set of \(N\) files \(W_1 , \cdots , W_N\) replicated across \(S\) non-colluding servers. The user wants to retrieve one out of \(N\) files, say file \(W_{D}\), but does not want servers to know the identity of the file. In other words, the user wants to hide the index \(D\) from the servers. In order to retrieve this desired file privately, the user generates \(S\) queries and sends query \(Q_s^{D}\) to server \(s\). After receiving their respective queries, servers construct answers which are a function of the query they received and the files they are storing. After receiving answers from all the servers, the user should be able to decode the desired file.
+
+* Our Contribution
+We considered the PIR problem in conjunction with another content delivery problem known as the [[file:coded-caching.org][coded caching]] problem. In this setup, there are \(B\) non-colluding servers storing \(N\) files. We propose a Private Information Retrieval scheme in which \(K\) users aided with \(C\) Multi-Access cache nodes privately retrieve data from distributed servers. We considered several multi-access setups with multiple non-colluding servers with all the messages replicated across the servers. Each server is connected to all the users via error-free broadcast links.
+
+** Publications
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs''* in IEEE Transactions on Communications, doi: 10.1109/TCOMM.2023.3325473. [[[https://ieeexplore.ieee.org/document/10288207][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Multi-User PIR with Cyclic Wraparound Multi-Access Caches''*. Entropy 2023, 25, 1228. https://doi.org/10.3390/e25081228
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs,''* 2023 IEEE Information Theory Workshop (ITW), Saint-Malo, France, 2023, pp. 125-130, doi: 10.1109/ITW55543.2023.10161671. [[[https://ieeexplore.ieee.org/document/10161671/][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-Access Multi-User Private Information Retrieval,''* 2022 20th International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt), Torino, Italy, 2022, pp. 246-253, doi: 10.23919/WiOpt56218.2022.9930597. [[[https://ieeexplore.ieee.org/document/9930597][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs.''* arXiv:2212.12979, 26 December 2022. [[[https://arxiv.org/abs/2212.12979][ArXiv Link]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Multi-Access Cache-Aided Multi-User Private Information Retrieval,''* arXiv:2201.11481, 9 Feb 2022. [[[https://arxiv.org/abs/2201.11481][ArXiv Link]]]

@@ -1,0 +1,11 @@
+#+TITLE: My Blogs
+#+AUTHOR: Kanishak Vaidya
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
+#+OPTIONS: html-style:nil toc:nil num:nil timestamp:nil author:nil title:nil 
+#+INCLUDE: ../sidenav.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
+#+end_export
+
+* Blogs
+#+INCLUDE: ./sitemap.org :lines "4-"

@@ -1,0 +1,24 @@
+#+title: HOME
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style.css" />
+#+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
+#+INCLUDE: ./sidenav.org
+#+INCLUDE: ./logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#publications")[0].classList.add("active"); </script>
+#+end_export
+
+* Journals
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs''* in IEEE Transactions on Communications, doi: 10.1109/TCOMM.2023.3325473. [[[https://ieeexplore.ieee.org/document/10288207][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Multi-User PIR with Cyclic Wraparound Multi-Access Caches''*. Entropy 2023, 25, 1228. https://doi.org/10.3390/e25081228
+* Conferences
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs,''* 2023 IEEE Information Theory Workshop (ITW), Saint-Malo, France, 2023, pp. 125-130, doi: 10.1109/ITW55543.2023.10161671. [[[https://ieeexplore.ieee.org/document/10161671/][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Private Information Delivery with Coded Storage,''* 2022 - 2022 IEEE International Symposium on Information Theory (ISIT 2022), Espoo, Finland, 24 June -- 2 July 2022. [[[https://ieeexplore.ieee.org/document/9834634][IEEE]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Distributed Computation: Privacy, Straggler Mitigation, and Security Against Colluding Workers,''* 2020 - 2020 IEEE Global Communications Conference, 2020, pp. 1-6, doi: 10.1109/GLOBECOM42002.2020.9322092. [[[https://ieeexplore.ieee.org/document/9322092][IEEE]]]
+
+* Workshops
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-Access Multi-User Private Information Retrieval,''* 2022 20th International Symposium on Modeling and Optimization in Mobile, Ad hoc, and Wireless Networks (WiOpt), Torino, Italy, 2022, pp. 246-253, doi: 10.23919/WiOpt56218.2022.9930597. [[[https://ieeexplore.ieee.org/document/9930597][IEEE]]]
+
+* ArXiv Submissions
+- Kanishak Vaidya and B. Sundar Rajan, *``Cache-Aided Multi-User Private Information Retrieval using PDAs.''* arXiv:2212.12979, 26 December 2022. [[[https://arxiv.org/abs/2212.12979][ArXiv Link]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Multi-Access Cache-Aided Multi-User Private Information Retrieval,''* arXiv:2201.11481, 9 Feb 2022. [[[https://arxiv.org/abs/2201.11481][ArXiv Link]]]
+- Kanishak Vaidya and B. Sundar Rajan, *``Private Information Delivery with Coded Storage,''* arXiv:2202.03803, 8 Feb 2022. [[[https://arxiv.org/abs/2202.03803][ArXiv Link]]]

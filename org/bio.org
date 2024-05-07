@@ -1,0 +1,55 @@
+#+title: BIO
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./style.css" />
+#+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
+#+INCLUDE: ./sidenav.org
+#+INCLUDE: ./logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#bio")[0].classList.add("active"); </script>
+#+end_export
+
+* About Kanishak Vaidya
+#+attr_html: alt: Kanishak Vaidya title: Headshot :width 300px :height auto :style float:left;margin-right:60px
+[[./static/profile-transparent.png]]
+
+
+** KANISHAK VAIDYA
+*** DOB: /10 December, 1995/
+*** Email: [[mailto:kanishakvaidya@gmail.com][kanishakvaidya@gmail.com]]
+*** Address: /IISc Bangalore, CV Raman Rd, Bengaluru, Karnataka. 560012/
+*** [[https://kanishakvaidya.github.io/resume/][RESUME]] | [[https://www.linkedin.com/in/kanishakvaidya/][LinkedIn]]
+#+begin_export html
+<div style="clear:both; margin-top:-1px; height:1px; overflow:hidden;"></div>
+#+end_export
+
+  -----
+
+
+
+
+** Academic Background
+Kanishak Vaidya received the B.Tech. degree in Electronics and Communication Engineering from JawaharLal Nehru Government Engineering College, Sundernagar, HP India in 2017. He joined IISc Bangalore for M.Tech is Signal Processing in 2018 and is currently working towards the PhD degree with the Department of Electrical Communication Engineering, IISc Bangalore, India.
+
+*** Education
+| Qualification   | Institute         | Specialization                  | Graduated |
+|-----------------+-------------------+---------------------------------+-----------|
+| *PhD*           | IISc Bangalore    | Communications                  | Nov 2023  |
+| *M.Tech*        | IISc Bangalore    | Signal Processing               | Jul 2023  |
+| *B.Tech*        | JNGEC Sundernagar | Electronics and Communications  | Jul 2017  |
+| *10+2*          | KV Mandi          | Non Medical and Medical Science | Mar 2013  |
+| *Matriculation* | KV Mandi          | Science                         | Mar 2011  |
+-----
+** Achievements
++ Awarded Prime Minister's Research Fellowship (PMRF) in January 2020
++ All India Rank 10 in GATE (EC), 2018. GATE Score: 1000
++ 30th All India Rank in Junior Mathematical Olympiad, 2011
+-----
+** PhD Guide
+#+attr_html: alt: Prof. B S Rajan title: Prof. B Sundar Rajan :width 300 :style float:left;margin-right:60px
+[[./static/guide.jpg]]
+** Prof. B. Sundar Rajan
+*** Email: [[mailto:bsrajan@iisc.ac.in][bsrajan@iisc.ac.in]]
+*** Senior Professor /Department of Electrical Communication Engineering, Indian Institute of Science, Bangalore/
+*** Website: [[https://ece.iisc.ac.in/~bsrajan/]]
+#+begin_export html
+<div style="clear:both; margin-top:-1px; height:1px; overflow:hidden;"></div>
+#+end_export

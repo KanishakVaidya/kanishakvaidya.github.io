@@ -1,0 +1,13 @@
+#+OPTIONS: html-style:nil
+#+begin_export html
+<div class="logo">
+<a class="logo__link" title="Kanishak Vaidya" rel="home">
+<div class="logo__item logo__text">
+<div class="logo__title">Kanishak Vaidya</div>
+<div class="logo__tagline">Senior Engineer | Qualcomm Bangalore.</div>
+</div></a>
+<!-- div style="float:right;">
+  <div class="toggle-light light" ></div >
+</div-->
+</div>
+#+end_export

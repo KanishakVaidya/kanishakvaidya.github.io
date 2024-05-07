@@ -1,0 +1,26 @@
+#+title: Projects
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
+#+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
+#+INCLUDE: ../sidenav.org
+#+INCLUDE: ../logo.org
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#projects")[0].classList.add("active"); </script>
+#+end_export
+
+* [[./mtech.org][M.Tech Projects]]
+- *Communications*: OFDM simulation and analysis on Simulink and MATLAB
+- *Communications*: Created python module for finite field operations
+- *Image Processing*: Image segmentation using watershed transform
+- *Computer Vision*: Image mosaic using homography estimation
+- *Computer Vision*: Finding rotation and translation direction using two images
+
+* [[./btech.org][B.Tech Projects]]
+- Tow-wheel self balancing robot
+- plant self care system
+- Pizza delivery system
+- Gesture controlled wheelchair
+- Home security alarm
+
+* [[./hobby.org][Hobby Projects]]
+- Maintaining a Linux distribution
+- Maintain a linux Software repositories
