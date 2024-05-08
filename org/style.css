@@ -77,35 +77,43 @@ div.outline-2, div.logo {
 }
 
 @media screen and (max-width: 900px) {
-    body{
+    body {
         width: 100%;
         min-width: 0;
     }
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-  }
-  .sidebar a {float: left;}
-  div.outline-2 , div.logo{margin: 2%;}
-
-  h1.title, #table-of-contents {
-      margin: 0%;
-      padding: 2%;
-      width: 100%;
-      float: none;
-}
-
+    .sidebar {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+    }
+    .sidebar a {float: left;}
+    div.outline-2 , div.logo{margin: 2%;}
+    
+    h1.title, #table-of-contents {
+	margin: 0 0 0 0;
+	padding: 2%;
+	width: 100%;
+	float: none;
+    }
+    h1.title {
+	padding-top: 70px;
+    }
+    
 }
 
 @media screen and (max-width: 750px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+  }
   .sidebar a {
     text-align: center;
     float: none;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+    /* position: -webkit-sticky; /\* Safari *\/ */
+    /* position: sticky; */
   }
   div.logo, h1.title {margin: auto;}
   .sidebar a:not(:active) {display: none;}
@@ -114,8 +122,8 @@ div.outline-2, div.logo {
     display: block;
   }
   .sidebar.responsive {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+      position: fixed;
+      top: 0;
   }
   .sidebar.responsive a {
     float: none;

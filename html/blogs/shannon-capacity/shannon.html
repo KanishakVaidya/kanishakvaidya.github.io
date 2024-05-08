@@ -8,7 +8,7 @@
 <title>Shannon Capacity theorem</title>
 <meta name="author" content="Kanishak Vaidya" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="stylesheet" href="/style.css" />
 <script>
   window.MathJax = {
     tex: {
@@ -68,9 +68,9 @@ function myFunction() {
 
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 
-<div id="outline-container-org1f4b921" class="outline-2">
-<h2 id="org1f4b921">Introduction</h2>
-<div class="outline-text-2" id="text-org1f4b921">
+<div id="outline-container-org6ed0696" class="outline-2">
+<h2 id="org6ed0696">Introduction</h2>
+<div class="outline-text-2" id="text-org6ed0696">
 <p>
 Consider you are trying to quantify the <i>amount of uncertainty</i> in a random variable \(X\). For example, answer the following question: "How much uncertainty is in a dice roll? Give a specific number." The first problem in answering this question is, how do you measure "uncertainty"? Even before that we need to understand what do we mean when we say uncertainty? Although we might not give a concrete definition of uncertainty as of now, but let's put out intuition about uncertainty in words and let's see can we make some mathematical statements about our intuitions. Here are some of the questions to be answered intuitively about the uncertainty in random variables:
 </p>
@@ -86,9 +86,9 @@ To define a measure of uncertainty, C. E. Shannon in his work "A Mathematical Th
 </div>
 </div>
 
-<div id="outline-container-org1e11840" class="outline-2">
-<h2 id="org1e11840">Axioms of uncertainty</h2>
-<div class="outline-text-2" id="text-org1e11840">
+<div id="outline-container-org805e4ee" class="outline-2">
+<h2 id="org805e4ee">Axioms of uncertainty</h2>
+<div class="outline-text-2" id="text-org805e4ee">
 <p>
 Now, any reasonable measure of uncertainty say \(H(\mathbf{p})\) should follow the following properties:
 </p>
@@ -102,9 +102,9 @@ Now, any reasonable measure of uncertainty say \(H(\mathbf{p})\) should follow t
 </ol>
 </div>
 
-<div id="outline-container-org7d5e9a5" class="outline-3">
-<h3 id="org7d5e9a5">Entropy</h3>
-<div class="outline-text-3" id="text-org7d5e9a5">
+<div id="outline-container-org5158eb5" class="outline-3">
+<h3 id="org5158eb5">Entropy</h3>
+<div class="outline-text-3" id="text-org5158eb5">
 <p>
 In his work, Shannon showed that only family of functions that satisfies all these axioms is of the form
 \[
@@ -119,9 +119,9 @@ In the above formula, we can accomodate \(K\) in the base of the logarithm. Cons
 </div>
 </div>
 
-<div id="outline-container-orgd9a7199" class="outline-3">
-<h3 id="orgd9a7199">Entropy of Continuous Distributions</h3>
-<div class="outline-text-3" id="text-orgd9a7199">
+<div id="outline-container-org8bf844a" class="outline-3">
+<h3 id="org8bf844a">Entropy of Continuous Distributions</h3>
+<div class="outline-text-3" id="text-org8bf844a">
 <p>
 In an analogous manner, we define the entropy of a continuous distribution with density function \(p(x)\) by:
 \[
@@ -130,9 +130,9 @@ H(X) = - \int_{-\infty}^{\infty} p(x) \log(p(x)) dx
 </p>
 </div>
 
-<div id="outline-container-org09aca70" class="outline-4">
-<h4 id="org09aca70">Properties of Entropy of continuous distribution</h4>
-<div class="outline-text-4" id="text-org09aca70">
+<div id="outline-container-orga0c0a47" class="outline-4">
+<h4 id="orga0c0a47">Properties of Entropy of continuous distribution</h4>
+<div class="outline-text-4" id="text-orga0c0a47">
 <ol class="org-ol">
 <li>If \(X\) is limited to certain volume \(V\), then \(H(X)\) is maximum and equal to \(\log{V}\) when \(p(x)\) is constant \(\frac{1}{V}\) in the volume.</li>
 <li>For random variables \(X\) and \(Y\)
@@ -148,9 +148,9 @@ with equality if and only if \(X\) and \(Y\) are independent.</li>
 </div>
 </div>
 
-<div id="outline-container-orgea7f711" class="outline-2">
-<h2 id="orgea7f711">The Capacity of a continuous channel</h2>
-<div class="outline-text-2" id="text-orgea7f711">
+<div id="outline-container-orgfaca0a9" class="outline-2">
+<h2 id="orgfaca0a9">The Capacity of a continuous channel</h2>
+<div class="outline-text-2" id="text-orgfaca0a9">
 <p>
 In a continuous channel, the input is a continuous time function \(f(t)\) (belonging to a certain set), and the output is some perturbed version of \(f(t)\). If the input function and the output of the channel are bandlimited to a frequency band of \(W\), then the statistics of the input signal, for some time \(T\), can be determined by \(2WT\) samples \((x_1, ... x_n) \triangleq \mathbf{X}\) and statistics of output function can be determined by the \(2TW\) samples \((y_1, ... y_n) \triangleq \mathbf{Y}\) taken every \(\frac{1}{2W}\) seconds.
 </p>
@@ -167,9 +167,9 @@ The maximum value of \(\frac{R}{T}\) for all possible distributions on \(\mathbf
 </p>
 </div>
 
-<div id="outline-container-org5492855" class="outline-3">
-<h3 id="org5492855">Additive noise independent of signal</h3>
-<div class="outline-text-3" id="text-org5492855">
+<div id="outline-container-org9e6a61f" class="outline-3">
+<h3 id="org9e6a61f">Additive noise independent of signal</h3>
+<div class="outline-text-3" id="text-org9e6a61f">
 <p>
 If the received signal is the sum of the input signal and some other independent signal (which is known as noise) then
 \[
@@ -190,9 +190,9 @@ Since noise is independent of the input signal, maximizing \(R\) means maximizin
 </div>
 </div>
 
-<div id="outline-container-org9dd5881" class="outline-2">
-<h2 id="org9dd5881">Capacity of AWGN channels</h2>
-<div class="outline-text-2" id="text-org9dd5881">
+<div id="outline-container-org43a90e2" class="outline-2">
+<h2 id="org43a90e2">Capacity of AWGN channels</h2>
+<div class="outline-text-2" id="text-org43a90e2">
 <p>
 Consider that the noise is a white thermal process and the transmitted signals are limited to certain average power \(P\). Then received power is \(P + N_0\) where \(N_0\) is the average noise power. Now, to maximize the entropy of \(\mathbf{Y}\), the received signals should also form a white noise ensemble, as this is the greatest entropy for a signal of power \(P + N_0\). So,
 \[
@@ -208,6 +208,7 @@ C = H(\mathbf{Y}) - H(\mathbf{N}) = W \log{\frac{P + N_0}{N_0}} = W \log{\left(1
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Date: 2023-05-16 Tue 00:00</p>
 <p class="author">Author: Kanishak Vaidya</p>
 </div>
 </body>

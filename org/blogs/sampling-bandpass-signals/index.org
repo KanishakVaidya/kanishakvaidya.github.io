@@ -1,5 +1,8 @@
 #+title: Sampling Theorem for Bandpass Signals
 #+AUTHOR: Kanishak Vaidya
+#+DATE: <2023-07-29 Sat>
+#+category: signal
+
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/style.css" />
 #+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t
 #+INCLUDE: ../../sidenav.org

@@ -1,5 +1,5 @@
 #+TITLE: Sitemap for project blogs
 
-- [[file:index.org][My Blogs]]
-- [[file:sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
-- [[file:shannon-capacity/shannon.org][Shannon Capacity theorem]]
+- 2024-05-06 - [[file:./index.org][My Blogs]]
+- 2024-05-08 - [[file:./sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
+- 2024-05-08 - [[file:./shannon-capacity/shannon.org][Shannon Capacity theorem]]

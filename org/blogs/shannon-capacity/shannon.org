@@ -1,6 +1,7 @@
 #+title: Shannon Capacity theorem
 #+AUTHOR: Kanishak Vaidya
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/style.css" />
+#+DATE: <2023-05-16 Tue> 
+#+CATEGORY: communication
 #+OPTIONS: html-style:nil toc:nil num:nil timestamp:nil title:t
 #+INCLUDE: ../../sidenav.org
 
