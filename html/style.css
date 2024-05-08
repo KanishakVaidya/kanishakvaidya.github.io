@@ -18,8 +18,8 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: 'MainBody', Helvetica, sans-serif;
   width: 67%;
   min-width: 850px;
@@ -78,12 +78,14 @@ div.outline-2, div.logo {
 
 @media screen and (max-width: 900px) {
     body {
+	padding-top: 50px;
         width: 100%;
         min-width: 0;
     }
     .sidebar {
 	width: 100%;
 	height: auto;
+	margin-top: 0;
 	position: fixed;
 	top: 0;
     }
@@ -103,6 +105,11 @@ div.outline-2, div.logo {
 }
 
 @media screen and (max-width: 750px) {
+    body {
+	padding-top: 50px;
+        width: 100%;
+        min-width: 0;
+    }
   .sidebar {
     width: 100%;
     height: auto;

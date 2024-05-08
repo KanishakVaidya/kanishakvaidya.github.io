@@ -58,7 +58,7 @@
       :publishing-function org-publish-attachment)
      ("phd" :components ("phd-progress" "blogs" "phd-progress-static"))))
 
-(org-publish-project "phd-progress-static")
+(org-publish-project "phd")
 
 ;; (provide 'publish)
 ;;; publish.el ends here
