@@ -22,9 +22,9 @@ Now, any reasonable measure of uncertainty say $H(\mathbf{p})$ should follow the
 1. $H$ should be continuous in $\mathbf{p}$.
 2. If all the $p_m$ are equal i.e. $p_m = \frac{1}{M}, \forall m$, then $H$ should be a monotonic increasing function of $M$.
 3. If a choice be broken down into two successive choices, then the original $H$ should be weighted sun of the individual values of $H$ for the two choices. This means
-   $$
-   H(p_1 , ... p_r, p_{r+1} , ... p_m) = p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) + p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
-   $$
+   \begin{align*}
+   H(p_1 , ... p_r, p_{r+1} , ... p_m) &= p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) \\ &+ p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
+   \end{align*}
 
 ** Entropy
 In his work, Shannon showed that only family of functions that satisfies all these axioms is of the form
@@ -71,10 +71,10 @@ $$
 R = H(\mathbf{Y}) - H(\mathbf{N})
 $$
 Now, because $\mathbf{Y} = \mathbf{X} + \mathbf{N}$ we have $H(\mathbf{X}, \mathbf{Y}) = H(\mathbf{X}, \mathbf{N})$. Expanding the left hand side, we'll get
-$$
-H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{X}) + H(\mathbf{N}) \\
-\implies R = H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
-$$
+\begin{align*}
+H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) &= H(\mathbf{X}) + H(\mathbf{N}) \newline \\
+\implies R &= H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
+\end{align*}
 Since noise is independent of the input signal, maximizing $R$ means maximizing $H(\mathbf{Y})$.
 
 * Capacity of AWGN channels

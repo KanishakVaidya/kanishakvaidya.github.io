@@ -22,7 +22,30 @@
       org-html-head-include-default-style nil ;; Use our own styles
       org-export-with-timestamps nil
       org-export-time-stamp-file nil
-      org-html-head "<link rel=\"stylesheet\" href=\"/style.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"/style.css\" />"
+      org-html-preamble t
+      org-html-preamble-format '(("en" 
+				  "<ul class=\"sidebar\" id=\"mySideNav\">
+  <a id=\"menu\" href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\"><b>MENU</b></a>
+  <a id=\"home\" href=\"/index.html\">Home</a>
+  <a id=\"research\" href=\"/research-topics/index.html\">Research Topics</a>
+  <a id=\"publications\" href=\"/publications.html\">Publications</a>
+  <a id=\"blogs\" href=\"/blogs/index.html\">Blogs</a>
+  <a id=\"projects\" href=\"/projects/index.html\">Projects</a>
+  <a id=\"bio\" href=\"/bio.html\">Bio</a>
+  </ul>
+<script>
+function myFunction() {
+  var x = document.getElementById(\"mySideNav\");
+  if (x.className === \"sidebar\") {
+    x.className += \" responsive\";
+  } else {
+    x.className = \"sidebar\";
+  }
+}
+</script> ")))
+;; (f-read-text "~/doc/repos/phd-progress/org/static/sidenav.html"))))
+
 
 (setq org-publish-project-alist
    '(

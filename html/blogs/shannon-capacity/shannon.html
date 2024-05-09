@@ -95,10 +95,12 @@ Now, any reasonable measure of uncertainty say \(H(\mathbf{p})\) should follow t
 <ol class="org-ol">
 <li>\(H\) should be continuous in \(\mathbf{p}\).</li>
 <li>If all the \(p_m\) are equal i.e. \(p_m = \frac{1}{M}, \forall m\), then \(H\) should be a monotonic increasing function of \(M\).</li>
-<li>If a choice be broken down into two successive choices, then the original \(H\) should be weighted sun of the individual values of \(H\) for the two choices. This means
-\[
-   H(p_1 , ... p_r, p_{r+1} , ... p_m) = p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) + p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
-   \]</li>
+<li><p>
+If a choice be broken down into two successive choices, then the original \(H\) should be weighted sun of the individual values of \(H\) for the two choices. This means
+</p>
+\begin{align*}
+H(p_1 , ... p_r, p_{r+1} , ... p_m) &= p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \frac{p_r}{p_{1:r}}) \\ &+ p_{r+1:M}H(\frac{p_{r+1}}{p_{r+1:M}} , ... , \frac{p_{M}}{p_{r+1:M}})
+\end{align*}</li>
 </ol>
 </div>
 
@@ -180,10 +182,12 @@ Now as signal and noise are independent, the rate of transmission is
 R = H(\mathbf{Y}) - H(\mathbf{N})
 \]
 Now, because \(\mathbf{Y} = \mathbf{X} + \mathbf{N}\) we have \(H(\mathbf{X}, \mathbf{Y}) = H(\mathbf{X}, \mathbf{N})\). Expanding the left hand side, we'll get
-\[
-H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{X}) + H(\mathbf{N}) \\
-\implies R = H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
-\]
+</p>
+\begin{align*}
+H(\mathbf{Y}) + H(\mathbf{X} | \mathbf{Y}) &= H(\mathbf{X}) + H(\mathbf{N}) \newline \\
+\implies R &= H(\mathbf{X}) - H(\mathbf{X} | \mathbf{Y}) = H(\mathbf{Y}) - H(\mathbf{N})
+\end{align*}
+<p>
 Since noise is independent of the input signal, maximizing \(R\) means maximizing \(H(\mathbf{Y})\).
 </p>
 </div>

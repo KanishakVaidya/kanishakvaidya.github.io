@@ -10,6 +10,27 @@
 <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+  </ul>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script> 
+</div>
 <div id="content" class="content">
 <ul class="sidebar" id="mySideNav">
   <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
@@ -47,7 +68,7 @@ function myFunction() {
 <h2 id="org232eca5">About Kanishak Vaidya</h2>
 <div class="outline-text-2" id="text-org232eca5">
 
-<div id="orgf3710a9" class="figure">
+<div id="orge8b1987" class="figure">
 <p><img src="./static/profile-transparent.png" alt="profile-transparent.png" width="300px" height="auto" style="float:left;margin-right:60px" />
 </p>
 </div>
@@ -167,7 +188,7 @@ Kanishak Vaidya received the B.Tech. degree in Electronics and Communication Eng
 <h3 id="org787cd07">PhD Guide</h3>
 <div class="outline-text-3" id="text-org787cd07">
 
-<div id="org31c7594" class="figure">
+<div id="org0191b39" class="figure">
 <p><img src="./static/guide.jpg" alt="guide.jpg" width="300" style="float:left;margin-right:60px" />
 </p>
 </div>

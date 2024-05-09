@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-08 Wed 17:47 -->
+<!-- 2024-05-09 Thu 17:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -11,6 +11,27 @@
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+  </ul>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script> 
+</div>
 <div id="content" class="content">
 <div class="logo">
 <a class="logo__link" title="Kanishak Vaidya" rel="home">
@@ -24,7 +45,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-05-08 Wed 17:47</p>
+<p class="date">Created: 2024-05-09 Thu 17:11</p>
 </div>
 </body>
 </html>
