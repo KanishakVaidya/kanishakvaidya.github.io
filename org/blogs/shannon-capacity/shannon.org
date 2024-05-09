@@ -3,7 +3,6 @@
 #+DATE: <2023-05-16 Tue> 
 #+CATEGORY: communication
 #+OPTIONS: html-style:nil toc:nil num:nil timestamp:nil title:t
-#+INCLUDE: ../../sidenav.org
 
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>

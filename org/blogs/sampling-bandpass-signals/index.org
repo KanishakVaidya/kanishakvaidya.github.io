@@ -5,7 +5,6 @@
 
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/style.css" />
 #+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t
-#+INCLUDE: ../../sidenav.org
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 #+end_export

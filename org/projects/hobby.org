@@ -1,7 +1,6 @@
 #+title: Hobby Projects
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
-#+INCLUDE: ../sidenav.org
 #+INCLUDE: ../logo.org
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#projects")[0].classList.add("active"); </script>

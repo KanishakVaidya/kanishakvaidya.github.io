@@ -43,6 +43,27 @@
 </script>
 </head>
 <body>
+<div id="preamble" class="status">
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+  </ul>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script> 
+</div>
 <div id="content" class="content">
 <h1 class="title">Sampling Theorem for Bandpass Signals</h1>
 <div id="table-of-contents" role="doc-toc">
@@ -54,26 +75,6 @@
 </ul>
 </div>
 </div>
-<ul class="sidebar" id="mySideNav">
-  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
-  <a id="home" href="/index.html">Home</a>
-  <a id="research" href="/research-topics/index.html">Research Topics</a>
-  <a id="publications" href="/publications.html">Publications</a>
-  <a id="blogs" href="/blogs/index.html">Blogs</a>
-  <a id="projects" href="/projects/index.html">Projects</a>
-  <a id="bio" href="/bio.html">Bio</a>
-</ul>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("mySideNav");
-  if (x.className === "sidebar") {
-    x.className += " responsive";
-  } else {
-    x.className = "sidebar";
-  }
-}
-</script>
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 
 <div id="outline-container-org44f290b" class="outline-2">
@@ -91,7 +92,7 @@ Baseband signals refer to signals that occupy a range of frequencies close to ze
 </p>
 
 
-<div id="orga5617e9" class="figure">
+<div id="org4eabbfe" class="figure">
 <p><img src="./baseband-spectrum.svg" alt="baseband-spectrum.svg" class="org-svg" style="width:50%;min-width:500px;" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Typical spectrum of a baseband signal.</p>
@@ -113,7 +114,7 @@ Say the signal \(x(t)\) is sampled at frequency \(f_{s}\), then according to sam
 </p>
 
 
-<div id="org2e9cf94" class="figure">
+<div id="orgcb89423" class="figure">
 <p><img src="./baseband-sampling.svg" alt="baseband-sampling.svg" class="org-svg" style="width:90%;min-width:700px;" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Sampling a baseband signal. Sampling a baseband signal at \(f_s\), causes repetition of the main lobe of the fourier transform to repeat after every \(f_s\) Hz in frequency domain.</p>
@@ -137,7 +138,7 @@ Now consider a bandpass signal, whose fourier transform is non-zero only between
 </p>
 
 
-<div id="orga26f1da" class="figure">
+<div id="org8011ad8" class="figure">
 <p><img src="./bandpass-spectrum.svg" alt="bandpass-spectrum.svg" class="org-svg" style="width:90%;min-width:700px;" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Typical spectrum of a bandpass signal.</p>
@@ -148,7 +149,7 @@ It is easy to see that this signal cannot be sampled at \(2W\). Consider the cas
 </p>
 
 
-<div id="orgc011442" class="figure">
+<div id="orge1ab0d6" class="figure">
 <p><img src="./bandpass-aliasing.svg" alt="bandpass-aliasing.svg" class="org-svg" style="width:w0%;min-width:550px;" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Sampling bandpass signals at \(2W\) will cause aliasing.</p>
@@ -169,7 +170,7 @@ Let, the signal \(x(t)\) be sampled at every \(T_{s}\) seconds. The samples are 
 </p>
 
 
-<div id="orgb8122a6" class="figure">
+<div id="orgd8a5d0b" class="figure">
 <p><img src="./optimal-sampling.svg" alt="optimal-sampling.svg" class="org-svg" style="width:50%;min-width:600px;" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Sampling bandpass signal such that \(n^{th}\) and \({(n+1)}^{th}\) repetetion of -ve frequency lobe doesn't alias with the positive frequency lobe.</p>

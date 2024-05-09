@@ -68,7 +68,6 @@ function myFunction() {
       :auto-sitemap t
       :sitemap-style list
       :sitemap-format-entry kpv/sitemap
-      ;; :sitemap-function kvd/org-publish-custom-sitemap
       :html-validation-link nil
       :publishing-function org-html-publish-to-html)
      ("phd-progress-static"
