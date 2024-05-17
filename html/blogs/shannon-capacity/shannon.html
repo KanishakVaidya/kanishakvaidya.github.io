@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shannon Capacity theorem</title>
 <meta name="author" content="Kanishak Vaidya" />
+<meta name="description" content="A brief proof of capacity of AWGN channel from Shannon's original paper." />
+<meta name="keywords" content="information theory, shannon capacity theorem, communication engineering" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" href="/style.css" />
 <script>
@@ -47,7 +49,7 @@
 <ul class="sidebar" id="mySideNav">
   <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
   <a id="home" href="/index.html">Home</a>
-  <a id="research" href="/research-topics/index.html">Research Topics</a>
+  <a id="research" href="/research-topics/index.html">Research</a>
   <a id="publications" href="/publications.html">Publications</a>
   <a id="blogs" href="/blogs/index.html">Blogs</a>
   <a id="projects" href="/projects/index.html">Projects</a>
@@ -66,11 +68,22 @@ function myFunction() {
 </div>
 <div id="content" class="content">
 <h1 class="title">Shannon Capacity theorem</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga872e9a">Introduction</a></li>
+<li><a href="#orgc9e2787">Axioms of uncertainty</a></li>
+<li><a href="#orgf4dc37c">The Capacity of a continuous channel</a></li>
+<li><a href="#orge8ad974">Capacity of AWGN channels</a></li>
+</ul>
+</div>
+</div>
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 
-<div id="outline-container-org6ed0696" class="outline-2">
-<h2 id="org6ed0696">Introduction</h2>
-<div class="outline-text-2" id="text-org6ed0696">
+<div id="outline-container-orga872e9a" class="outline-2">
+<h2 id="orga872e9a">Introduction</h2>
+<div class="outline-text-2" id="text-orga872e9a">
 <p>
 Consider you are trying to quantify the <i>amount of uncertainty</i> in a random variable \(X\). For example, answer the following question: "How much uncertainty is in a dice roll? Give a specific number." The first problem in answering this question is, how do you measure "uncertainty"? Even before that we need to understand what do we mean when we say uncertainty? Although we might not give a concrete definition of uncertainty as of now, but let's put out intuition about uncertainty in words and let's see can we make some mathematical statements about our intuitions. Here are some of the questions to be answered intuitively about the uncertainty in random variables:
 </p>
@@ -86,9 +99,9 @@ To define a measure of uncertainty, C. E. Shannon in his work "A Mathematical Th
 </div>
 </div>
 
-<div id="outline-container-org805e4ee" class="outline-2">
-<h2 id="org805e4ee">Axioms of uncertainty</h2>
-<div class="outline-text-2" id="text-org805e4ee">
+<div id="outline-container-orgc9e2787" class="outline-2">
+<h2 id="orgc9e2787">Axioms of uncertainty</h2>
+<div class="outline-text-2" id="text-orgc9e2787">
 <p>
 Now, any reasonable measure of uncertainty say \(H(\mathbf{p})\) should follow the following properties:
 </p>
@@ -104,9 +117,9 @@ H(p_1 , ... p_r, p_{r+1} , ... p_m) &= p_{1:r} H(\frac{p_1}{p_{1:r}}, ... , \fra
 </ol>
 </div>
 
-<div id="outline-container-org5158eb5" class="outline-3">
-<h3 id="org5158eb5">Entropy</h3>
-<div class="outline-text-3" id="text-org5158eb5">
+<div id="outline-container-org579ca31" class="outline-3">
+<h3 id="org579ca31">Entropy</h3>
+<div class="outline-text-3" id="text-org579ca31">
 <p>
 In his work, Shannon showed that only family of functions that satisfies all these axioms is of the form
 \[
@@ -121,9 +134,9 @@ In the above formula, we can accomodate \(K\) in the base of the logarithm. Cons
 </div>
 </div>
 
-<div id="outline-container-org8bf844a" class="outline-3">
-<h3 id="org8bf844a">Entropy of Continuous Distributions</h3>
-<div class="outline-text-3" id="text-org8bf844a">
+<div id="outline-container-orgb01e779" class="outline-3">
+<h3 id="orgb01e779">Entropy of Continuous Distributions</h3>
+<div class="outline-text-3" id="text-orgb01e779">
 <p>
 In an analogous manner, we define the entropy of a continuous distribution with density function \(p(x)\) by:
 \[
@@ -132,9 +145,9 @@ H(X) = - \int_{-\infty}^{\infty} p(x) \log(p(x)) dx
 </p>
 </div>
 
-<div id="outline-container-orga0c0a47" class="outline-4">
-<h4 id="orga0c0a47">Properties of Entropy of continuous distribution</h4>
-<div class="outline-text-4" id="text-orga0c0a47">
+<div id="outline-container-orga00ebf2" class="outline-4">
+<h4 id="orga00ebf2">Properties of Entropy of continuous distribution</h4>
+<div class="outline-text-4" id="text-orga00ebf2">
 <ol class="org-ol">
 <li>If \(X\) is limited to certain volume \(V\), then \(H(X)\) is maximum and equal to \(\log{V}\) when \(p(x)\) is constant \(\frac{1}{V}\) in the volume.</li>
 <li>For random variables \(X\) and \(Y\)
@@ -150,9 +163,9 @@ with equality if and only if \(X\) and \(Y\) are independent.</li>
 </div>
 </div>
 
-<div id="outline-container-orgfaca0a9" class="outline-2">
-<h2 id="orgfaca0a9">The Capacity of a continuous channel</h2>
-<div class="outline-text-2" id="text-orgfaca0a9">
+<div id="outline-container-orgf4dc37c" class="outline-2">
+<h2 id="orgf4dc37c">The Capacity of a continuous channel</h2>
+<div class="outline-text-2" id="text-orgf4dc37c">
 <p>
 In a continuous channel, the input is a continuous time function \(f(t)\) (belonging to a certain set), and the output is some perturbed version of \(f(t)\). If the input function and the output of the channel are bandlimited to a frequency band of \(W\), then the statistics of the input signal, for some time \(T\), can be determined by \(2WT\) samples \((x_1, ... x_n) \triangleq \mathbf{X}\) and statistics of output function can be determined by the \(2TW\) samples \((y_1, ... y_n) \triangleq \mathbf{Y}\) taken every \(\frac{1}{2W}\) seconds.
 </p>
@@ -169,9 +182,9 @@ The maximum value of \(\frac{R}{T}\) for all possible distributions on \(\mathbf
 </p>
 </div>
 
-<div id="outline-container-org9e6a61f" class="outline-3">
-<h3 id="org9e6a61f">Additive noise independent of signal</h3>
-<div class="outline-text-3" id="text-org9e6a61f">
+<div id="outline-container-orgea71068" class="outline-3">
+<h3 id="orgea71068">Additive noise independent of signal</h3>
+<div class="outline-text-3" id="text-orgea71068">
 <p>
 If the received signal is the sum of the input signal and some other independent signal (which is known as noise) then
 \[
@@ -194,9 +207,9 @@ Since noise is independent of the input signal, maximizing \(R\) means maximizin
 </div>
 </div>
 
-<div id="outline-container-org43a90e2" class="outline-2">
-<h2 id="org43a90e2">Capacity of AWGN channels</h2>
-<div class="outline-text-2" id="text-org43a90e2">
+<div id="outline-container-orge8ad974" class="outline-2">
+<h2 id="orge8ad974">Capacity of AWGN channels</h2>
+<div class="outline-text-2" id="text-orge8ad974">
 <p>
 Consider that the noise is a white thermal process and the transmitted signals are limited to certain average power \(P\). Then received power is \(P + N_0\) where \(N_0\) is the average noise power. Now, to maximize the entropy of \(\mathbf{Y}\), the received signals should also form a white noise ensemble, as this is the greatest entropy for a signal of power \(P + N_0\). So,
 \[

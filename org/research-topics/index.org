@@ -1,4 +1,4 @@
-#+title: Research Topics
+#+title: Research
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 #+OPTIONS: html-style:nil toc:nil title:nil num:nil timestamp:nil
 #+INCLUDE: ../logo.org

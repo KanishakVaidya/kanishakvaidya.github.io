@@ -1,8 +1,10 @@
 #+title: Shannon Capacity theorem
 #+AUTHOR: Kanishak Vaidya
 #+DATE: <2023-05-16 Tue> 
-#+CATEGORY: communication
-#+OPTIONS: html-style:nil toc:nil num:nil timestamp:nil title:t
+#+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t
+#+DESCRIPTION: A brief proof of capacity of AWGN channel from Shannon's original paper.
+#+KEYWORDS: information theory, shannon capacity theorem, communication engineering
+#+FILETAGS: :communication:
 
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>

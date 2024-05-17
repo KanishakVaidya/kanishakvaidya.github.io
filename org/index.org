@@ -9,7 +9,8 @@
 
 * About Me
 I am a Senior Engineer at Qualcomm Bangalore, India. As part of Wireless Research and Development (WRD) team, my current area of focus is on cutting edge communication technologies.
-Prior to joining Qualcomm, I completed my PhD from the Indian Institute of Science, Bangalore, with a research interest in wireless distributed systems. During my PhD, I have worked on distributed machine learning systems, broadcast networks for information retrieval and delivery, and wireless cache-aided networks, focusing on privacy and security.
+
+Prior to joining Qualcomm, I completed my *PhD from the Indian Institute of Science, Bangalore*, with a research interest in wireless distributed systems. During my PhD, I have worked on distributed machine learning systems, broadcast networks for information retrieval and delivery, and wireless cache-aided networks, focusing on privacy and security.
 
 After acquiring AIR 10 in GATE (EC) 2018, I joined IISc for an M.Tech in signal processing and upgraded to a PhD after one year. I have hands-on experience in image processing and computer vision projects. I also have a strong background in coding and information theory.
 -----

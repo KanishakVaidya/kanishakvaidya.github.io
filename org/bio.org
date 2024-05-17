@@ -12,9 +12,7 @@
 
 
 ** KANISHAK VAIDYA
-*** DOB: /10 December, 1995/
 *** Email: [[mailto:kanishakvaidya@gmail.com][kanishakvaidya@gmail.com]]
-*** Address: /IISc Bangalore, CV Raman Rd, Bengaluru, Karnataka. 560012/
 *** [[https://kanishakvaidya.github.io/resume/][RESUME]] | [[https://www.linkedin.com/in/kanishakvaidya/][LinkedIn]]
 #+begin_export html
 <div style="clear:both; margin-top:-1px; height:1px; overflow:hidden;"></div>
@@ -26,7 +24,7 @@
 
 
 ** Academic Background
-Kanishak Vaidya received the B.Tech. degree in Electronics and Communication Engineering from JawaharLal Nehru Government Engineering College, Sundernagar, HP India in 2017. He joined IISc Bangalore for M.Tech is Signal Processing in 2018 and is currently working towards the PhD degree with the Department of Electrical Communication Engineering, IISc Bangalore, India.
+Kanishak Vaidya received the B.Tech. degree in Electronics and Communication Engineering from JawaharLal Nehru Government Engineering College, Sundernagar, HP India in 2017. He joined IISc Bangalore for M.Tech is Signal Processing in 2018 and upgraded to PhD in 2019. In January 2020, he was awarded Prime Minister's Research Fellowship. Kanishak completed his PhD in November 2023. Currently he is working at Qualcomm as a senior engineer, in Wireless Research and Development (WRD) team.
 
 *** Education
 | Qualification   | Institute         | Specialization                  | Graduated |

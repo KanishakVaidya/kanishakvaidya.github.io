@@ -7,4 +7,4 @@
 #+end_export
 
 * Blogs
-#+INCLUDE: ./sitemap.org :lines "4-"
+#+INCLUDE: ./sitemap.org :lines "2-"

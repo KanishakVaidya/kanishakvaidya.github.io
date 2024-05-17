@@ -1,5 +1,12 @@
-#+TITLE: Sitemap for project blogs
+ - 2024-05-09 - [[./index.org][My Blogs]]
+ - 2023-09-16 - [[./backpropagation-calculus/index.org][Backpropagation Calculus]]
+ - 2023-07-29 - [[./sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
+ - 2023-05-16 - [[./shannon-capacity/shannon.org][Shannon Capacity theorem]]
 
-- 2024-05-06 - [[file:./index.org][My Blogs]]
-- 2024-05-08 - [[file:./sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
-- 2024-05-08 - [[file:./shannon-capacity/shannon.org][Shannon Capacity theorem]]
+** Blogs by categories
+
+*** AI/ML
+- [[./backpropagation-calculus/index.org][Backpropagation Calculus]]
+*** communication
+- [[./sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
+- [[./shannon-capacity/shannon.org][Shannon Capacity theorem]]

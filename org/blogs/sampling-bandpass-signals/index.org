@@ -1,10 +1,12 @@
 #+title: Sampling Theorem for Bandpass Signals
 #+AUTHOR: Kanishak Vaidya
 #+DATE: <2023-07-29 Sat>
-#+category: signal
-
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/style.css" />
 #+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t
+#+DESCRIPTION: Everybody know sampling theorem. But this topic is about sampling theorem for bandpass signals, which is often a missed topic.
+#+KEYWORDS: signals, fourier transform, sampling theorem, nyquist criteria
+#+FILETAGS: :communication:
+
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 #+end_export

@@ -1,0 +1,18 @@
+#+TITLE: Sitemap for project phd-progress
+
+- [[file:bio.org][BIO]]
+- [[file:index.org][Kanishak | Home]]
+- [[file:publications.org][Publications]]
+- [[file:logo.org][logo]]
+- [[file:sidenav.org][sidenav]]
+- projects
+  - [[file:projects/btech.org][B.Tech Projects]]
+  - [[file:projects/hobby.org][Hobby Projects]]
+  - [[file:projects/mtech.org][M.Tech Projects]]
+  - [[file:projects/index.org][Projects]]
+- research-topics
+  - [[file:research-topics/coded-caching.org][Coded Caching]]
+  - [[file:research-topics/computing.org][Distributed Computing]]
+  - [[file:research-topics/PID.org][Private Information Delivery]]
+  - [[file:research-topics/PIR.org][Private Information Retrieval]]
+  - [[file:research-topics/index.org][Research]]
