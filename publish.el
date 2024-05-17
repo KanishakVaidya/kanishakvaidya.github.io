@@ -114,18 +114,18 @@ function myFunction() {
    '(
      ("phd-progress"
       :exclude "blogs/.*"
-      :base-directory "~/doc/repos/phd-progress/org"
+      :base-directory "~/doc/repos/kanishakvaidya.github.io/org"
       :base-extension "org"
-      :publishing-directory "~/doc/repos/phd-progress/html"
+      :publishing-directory "~/doc/repos/kanishakvaidya.github.io/docs"
       :recursive t
       :auto-sitemap t
       :with-author nil
       :html-validation-link nil
       :publishing-function org-html-publish-to-html)
      ("blogs"
-      :base-directory "~/doc/repos/phd-progress/org/blogs"
+      :base-directory "~/doc/repos/kanishakvaidya.github.io/org/blogs"
       :base-extension "org"
-      :publishing-directory "~/doc/repos/phd-progress/html/blogs"
+      :publishing-directory "~/doc/repos/kanishakvaidya.github.io/docs/blogs"
       :recursive t
       :auto-sitemap t
       :sitemap-style list
@@ -135,9 +135,9 @@ function myFunction() {
       :publishing-function org-html-publish-to-html)
      ("phd-progress-static"
       :exclude "docs/.*"
-      :base-directory "~/doc/repos/phd-progress/org"
+      :base-directory "~/doc/repos/kanishakvaidya.github.io/org"
       :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|svg\\|ttf"
-      :publishing-directory "~/doc/repos/phd-progress/html/"
+      :publishing-directory "~/doc/repos/kanishakvaidya.github.io/docs/"
       :recursive t
       :publishing-function org-publish-attachment)
      ("phd" :components ("phd-progress" "blogs" "phd-progress-static"))))
