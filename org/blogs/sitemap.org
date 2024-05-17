@@ -1,4 +1,4 @@
- - 2024-05-09 - [[./index.org][My Blogs]]
+ - 2024-05-17 - [[./index.org][My Blogs]]
  - 2023-09-16 - [[./backpropagation-calculus/index.org][Backpropagation Calculus]]
  - 2023-07-29 - [[./sampling-bandpass-signals/index.org][Sampling Theorem for Bandpass Signals]]
  - 2023-05-16 - [[./shannon-capacity/shannon.org][Shannon Capacity theorem]]

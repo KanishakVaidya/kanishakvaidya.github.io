@@ -6,10 +6,6 @@
 ;;
 ;;; Commentary:
 ;;
-;;  Final goal is to make a 'tags' file that list
-;;  all filetags and the posts containing those
-;;  filetags
-;;
 ;;; Code:
 
 ;; (org-export-define-derived-backend 'my-custom-backend 'html
@@ -17,14 +13,8 @@
 ;;   '((:keywords "keywords" nil nil split)
 ;;     (:filetags "filetags" nil nil split)))
 
-;; (defun kpv/sitemap (file style project)
-;;   (concat (format-time-string "%Y-%m-%d" (org-publish-find-date file project)) " - [[./" file "][" (org-publish-find-title file project) "]] " (mapconcat 'identity (org-publish-find-property file :filetags project) " : ")))
-
 (defun kpv/sitemap (file style project)
   (concat (format-time-string "%Y-%m-%d" (org-publish-find-date file project)) " ; [[./" file "][" (org-publish-find-title file project) "]] ; " (mapconcat 'identity (org-publish-find-property file :filetags project) ":")))
-
-;; (defun kvp/sitefunc (title file)
-;;   (message "%s" file))
 
 (defun kvp/sitefunc (title input-list)
   "Parse INPUT-LIST and generate an Org file content."
@@ -107,12 +97,12 @@ function myFunction() {
       org-html-postamble-format '(("en" "<p class=\"author\">Author: %a</p>
 <p class=\"date\">Date: %d</p>
 <p class=\"creator\">%c</p>")))
-;; (f-read-text "~/doc/repos/phd-progress/org/static/sidenav.html"))))
+;; (f-read-text "~/doc/repos/kanishakvaidya.github.io/org/static/sidenav.html"))))
 
 
 (setq org-publish-project-alist
    '(
-     ("phd-progress"
+     ("kanishakvaidya.github.io"
       :exclude "blogs/.*"
       :base-directory "~/doc/repos/kanishakvaidya.github.io/org"
       :base-extension "org"
@@ -133,16 +123,16 @@ function myFunction() {
       :sitemap-format-entry kpv/sitemap
       :html-validation-link nil
       :publishing-function org-html-publish-to-html)
-     ("phd-progress-static"
+     ("kanishakvaidya.github.io-static"
       :exclude "docs/.*"
       :base-directory "~/doc/repos/kanishakvaidya.github.io/org"
       :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|svg\\|ttf"
       :publishing-directory "~/doc/repos/kanishakvaidya.github.io/docs/"
       :recursive t
       :publishing-function org-publish-attachment)
-     ("phd" :components ("phd-progress" "blogs" "phd-progress-static"))))
+     ("portfolio" :components ("kanishakvaidya.github.io" "blogs" "kanishakvaidya.github.io-static"))))
 
-(org-publish-project "phd")
+(org-publish-project "portfolio")
 
 ;; (provide 'publish)
 ;;; publish.el ends here
