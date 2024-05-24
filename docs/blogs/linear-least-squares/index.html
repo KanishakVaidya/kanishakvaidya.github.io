@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linear Least Squares</title>
+<meta name="author" content="Kanishak Vaidya" />
+<meta name="description" content="Derivation of matrix solution of linear least squares. We find a linear combination of inputs that predict
+outputs such that the mean square error in the given data is minimized." />
+<meta name="keywords" content="machine learning, artificial intelligence, optimization, gradient descent, linear algebra, matrix theory" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<ul class="sidebar" id="mySideNav">
+  <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()"><b>MENU</b></a>
+  <a id="home" href="/index.html">Home</a>
+  <a id="research" href="/research-topics/index.html">Research</a>
+  <a id="publications" href="/publications.html">Publications</a>
+  <a id="blogs" href="/blogs/index.html">Blogs</a>
+  <a id="projects" href="/projects/index.html">Projects</a>
+  <a id="bio" href="/bio.html">Bio</a>
+  </ul>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySideNav");
+  if (x.className === "sidebar") {
+    x.className += " responsive";
+  } else {
+    x.className = "sidebar";
+  }
+}
+</script> 
+</div>
+<div id="content" class="content">
+<h1 class="title">Linear Least Squares</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf1189ea">What's the goal here?</a></li>
+<li><a href="#org90e8fa0">Minimizing the error</a></li>
+<li><a href="#org5ed6683">Appendix: The matrix derivatives</a></li>
+</ul>
+</div>
+</div>
+<script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
+
+<div id="outline-container-orgf1189ea" class="outline-2">
+<h2 id="orgf1189ea">What's the goal here?</h2>
+<div class="outline-text-2" id="text-orgf1189ea">
+<p>
+Let's get right into it. We have the following data: \({(\mathbf{x}_{n}, y_{n})}_{n = 1}^{N}\), where \(\mathbf{x}_{n} \in \mathbb{R}^{M}\) and \(y_{n} \in \mathbb{R}\). That is, we have \(N\) <i>input vectors</i>, of size \(M\), and for each inpu \((\mathbf{x}_n)\) we have a corresponding output \((y_{n})\). Our goal is to find some vector \(\mathbf{a} \in \mathbb{R}^{M}\) to define a linear relation between the input vectors and output value. We need
+\[
+\mathbf{x}_{n}^{T} \mathbf{a} \approx y_{n}
+\]
+There are several ways to define the <i>quality</i> of the approximations. A very popular metric is the <i>mean square error</i>. The mean square error is defined as
+\[
+E = \frac{1}{N} \sum_{n=1}^{N} {\left(\mathbf{x}_{n}^{T}\mathbf{a} - y_{n}\right)}^{2}
+\]
+Which is the average of the squares of the errors for every given datapoint. The goal is to find some vector \(\mathbf{a}\) such that \(E\) is minimized.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org90e8fa0" class="outline-2">
+<h2 id="org90e8fa0">Minimizing the error</h2>
+<div class="outline-text-2" id="text-org90e8fa0">
+<p>
+To describe the error term in matrix format, let's define the following matrices:
+</p>
+\begin{align*}
+\mathbf{X} &\triangleq {\begin{bmatrix}
+\mathbf{x}_{1}^{T} \\
+\vdots \\
+\mathbf{x}_{n}^{T} \\
+\vdots \\
+\mathbf{x}_{N}^{T} \\
+\end{bmatrix}}_{N \times M} &
+\mathbf{y} &\triangleq {\begin{bmatrix}
+{y}_{1} \\
+\vdots \\
+{y}_{n} \\
+\vdots \\
+{y}_{N} \\
+\end{bmatrix}}_{N \times 1}
+\end{align*}
+
+<p>
+With the help of these matrices, we can write the error in matrix form as follows:
+</p>
+\begin{align*}
+E = \frac{1}{N}&{\| \mathbf{X}\mathbf{a} - \mathbf{y} \|}^{2} = \frac{1}{N} {\left( \mathbf{X}\mathbf{a} - \mathbf{y} \right)}^{T} {\left( \mathbf{X}\mathbf{a} - \mathbf{y} \right)} \\
+&= \frac{\mathbf{a}^{T}\mathbf{X}^{T}\mathbf{X}\mathbf{a} - \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{y} - \mathbf{y}^{T}\mathbf{X}\mathbf{a} + \mathbf{y}^{T}\mathbf{y}}{N}
+\end{align*}
+
+<p>
+To choose the vector \(\mathbf{a}\) that minimize the error \(E\), we compute \(\partial E / \partial \mathbf{a}\) and set it to zero.
+</p>
+\begin{align*}
+\frac{\partial E}{\partial \mathbf{a}} &= \frac{\partial \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{X}\mathbf{a}}{\partial \mathbf{a}}  - \frac{\partial \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{y}}{\partial \mathbf{a}} - \frac{\partial \mathbf{y}^{T}\mathbf{X}\mathbf{a}}{\partial \mathbf{a}} + \frac{\partial \mathbf{y}^{T}\mathbf{y}}{\partial \mathbf{a}} \\
+\end{align*}
+<p>
+Let's just write each of the derivative now and prove the derivative of each term later
+</p>
+\begin{align*}
+\frac{\partial E}{\partial \mathbf{a}} &= 2 \mathbf{a}^{T} \mathbf{X}^{T}\mathbf{X} - \mathbf{y}^{T}\mathbf{X} - \mathbf{y}^{T}\mathbf{X} + \mathbf{0} = \mathbf{0} \\
+&\implies \mathbf{a}^{T} \mathbf{X}^{T}\mathbf{X} = \mathbf{y}^{T}\mathbf{X} \implies \mathbf{a} = {\left(\mathbf{X}^{T}\mathbf{X}\right)}^{-1}\mathbf{X}^{T}\mathbf{y}
+\end{align*}
+
+<p>
+Which gives us the least square solution in matrix form
+</p>
+\begin{equation*}
+{\Large
+\bbox[10px, border: 2px solid black]{\mathbf{a} = {\left(\mathbf{X}^{T}\mathbf{X}\right)}^{-1}\mathbf{X}^{T}\mathbf{y}}
+}
+\end{equation*}
+</div>
+</div>
+
+<div id="outline-container-org5ed6683" class="outline-2">
+<h2 id="org5ed6683">Appendix: The matrix derivatives</h2>
+<div class="outline-text-2" id="text-org5ed6683">
+<p>
+Let's derivative the following two matrix derivatives:
+</p>
+<ol class="org-ol">
+<li>A quadratic matrix term. For vector \(\mathbf{x}\) and <i>symmetric matrix</i> \(\mathbf{Q}\)
+\[
+   \frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = 2 \mathbf{x}^{T} \mathbf{Q}
+   \]</li>
+<li>A linear matrix term. For constant vector \(\mathbf{c}\) and variable \(\mathbf{x}\)
+\[
+   \frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{c}^{T}
+   \]</li>
+</ol>
+
+<blockquote>
+<p>
+<b>NOTE:</b> We are using <i>Neumenator layout</i> for matrix derivatives. In numerator layout, the derivative of scalar quantity \(a\) with respect to a matrix \(\mathbf{X}\) of size \(r \times c\) has size \(c \times r\). The \(i, j\) entry of derivative is
+\[
+{\left[ \frac{\partial a}{\partial \mathbf{X}} \right]}_{j, i} = \frac{\partial a}{\partial \mathbf{X}_{i, j}}
+\]
+for \(i = 1, 2, \cdots r\) and \(j = 1, 2, \cdots c\). For more details, read <a href="https://en.wikipedia.org/wiki/Matrix_calculus#Numerator-layout_notation">this wikipedia article</a>.
+</p>
+</blockquote>
+
+<p>
+Now let's prove the identities.
+</p>
+</div>
+
+<div id="outline-container-org31575d9" class="outline-3">
+<h3 id="org31575d9">Proof: \(\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = 2 \mathbf{x}^{T} \mathbf{Q}\)</h3>
+<div class="outline-text-3" id="text-org31575d9">
+<p>
+By definition,
+\[
+\mathbf{x}^{T} \mathbf{Q} \mathbf{x} = \sum_{i, j} q_{i, j} x_{i} x_{j} = \sum_{j} x_{j} \sum_{i} q_{i, j} x_{i}
+\]
+Differentiating, with respect to \(k^{th}\) element of \(\mathbf{x}\): \(x_{k}\), we'll get
+</p>
+\begin{align*}
+\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial x_{k}} &= \frac{\partial }{\partial x_{k}} \left( \sum_{j} x_{j} \sum_{i} q_{i, j} x_{i} \right) \\
+&= \frac{\partial }{\partial x_{k}} \left( x_{k} \sum_{i} q_{i, k} x_{i} + \sum_{j \neq k} x_{j} \sum_{i} q_{i, j} x_{i} \right) \\
+&= \frac{\partial }{\partial x_{k}} \left( x_{k} \left(q_{k, k} x_{k} +  \sum_{i \neq k} q_{i, k} x_{i} \right) + \sum_{j \neq k} x_{j} \left( q_{k, j} x_{k} + \sum_{i \neq k} q_{i, j} x_{i} \right) \right) \\
+&= 2 q_{k, k} x_{k} + \sum_{i \neq k} q_{i, k} x_{i} + \sum_{j \neq k} x_{j} q_{k, j} = \sum_{i}q_{i, k} x_{i} + \sum_{j} q_{k, j} x_{j} = \mathbf{x}^{T} \mathbf{Q}_{k} + \mathbf{x}^{T} {\mathbf{Q}^{T}}_{k}
+\end{align*}
+<p>
+Writing this equationg for every \(k\), we'll get
+\[
+\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{x}^{T} \left( \mathbf{Q} + \mathbf{Q}^{T} \right) = 2 \mathbf{x}^{T} \mathbf{Q}
+\]
+Where the last equality holds for symmetric \(\mathbf{Q}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge18a25c" class="outline-3">
+<h3 id="orge18a25c">Proof: \(\frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{c}^{T}\)</h3>
+<div class="outline-text-3" id="text-orge18a25c">
+<p>
+This is quiet easy to show. We have
+</p>
+\begin{align*}
+\mathbf{c}^{T}\mathbf{x} = c_{1}x_{1} + \cdots + c_{k}x_{k} + \cdots \implies \frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial x_{k}} = c_{k}
+\end{align*}
+<p>
+Writing, for all terms in \(\mathbf{x}\), we'll get the desired identity.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2024-02-25 Sun 00:00</p>
+<p class="author">Author: Kanishak Vaidya</p>
+</div>
+</body>
+</html>

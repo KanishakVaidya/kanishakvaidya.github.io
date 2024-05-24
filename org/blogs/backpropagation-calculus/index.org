@@ -1,11 +1,11 @@
-#+title: Backpropagation Calculus
+#+title: Backpropagation: A Proper Matrix Derivation
 #+AUTHOR: Kanishak Vaidya
 #+DATE: <2023-09-16 Tue> 
 #+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t
 #+KEYWORDS: machine learning, artificial intelligence, neural networks, backpropagation, optimization, gradient descent, 
 #+FILETAGS: AI/ML
-#+DESCRIPTION: Description of backpropagation algorithm used in machine learning. It contains matrix description of forward and backward
-#+DESCRIPTION: propagation which is missing from many explanations feedforward neural networks.
+#+DESCRIPTION: Description of backpropagation algorithm used in machine learning. It contains proper matrix description 
+#+DESCRIPTION: of forward and backward propagation which is missing from many explanations feedforward neural networks.
 
 #+begin_export html
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
@@ -14,7 +14,7 @@
 * ML Primer: The Whats and the whys?
 If you are unfamiliar with machine learning, you wouldn't know what backpropagation is. Chances are you can't even tell from the title of this blog that this blog is about machine learning. Well, actually this blog is not about machine learning, it's just about one small portion of it, the backpropagation algorithm. Still I want to give a small primer about machine learning, specifically feed forward neural networks, so that we are on the same page when we talk about the backpropagation algorithm.
 
-Say you have a dataset of housing prices. There are information about 100 houses in the dataset. For each house you have its, area in square meters, number of rooms, number of floors and it's price. Your task is to go through this data and "learn" some relation between the features of the houses and its price. Note, I said "learn" and not memorize because now your next task is to predict the price of a house, which is not in this dataset, given the same features about this unseen house. How will you do it? What patterns will you keep in your mind? Could there be some biases? Will your predictions depend on your mood and what you ate for the lunch? And one last question... what if tomorrow I come with 1000 more data points (house features and there prices) and ask you to "learn" these as well? And then I give you information about 10,000 houses and ask you to predict their prices?
+Say you have a dataset of housing prices. There are information about 100 houses in the dataset. For each house you have area in square meters, number of rooms, number of floors and it's price. Your task is to go through this data and "learn" some relation between the features of the houses and its price. Note, I said "learn" and not memorize because now your next task is to predict the price of a house, which is not in this dataset. So, given the same features about this unseen house, you have to predict its price. How will you do it? What patterns will you keep in your mind? Could there be some biases? Will your predictions depend on your mood and what you ate for the lunch? And one last question... what if tomorrow I come with 1000 more data points (house features and there prices) and ask you to "learn" these as well? And then I give you information about 10,000 houses and ask you to predict their prices?
 
 Well, by now you should know this is not a task for a human being to "learn" these prices, but this is a task for a machine to learn and predict. This is a /machine learning/ task.
 
@@ -74,7 +74,7 @@ $$
 This operation is done for every node in the neural network. Let's look at a general node, node $j$ of layer $l$, and form a matrix equation for the forward propagation.
 
 ** Forward propagation: Loads of matrix multiplications
-First things first. Let's formalize the notations. We have $L$ layers in our neural network, and therefore $L$ set's of tunable weights and biases. Each layer $l$ contains $N_{l}$ nodes. Therefore, at layer $l$ we have $N_{l} \times N_{l-1}$ weights denoted by $w_{ji}^{l}$ and $N_{l}$ biases denoted by $b_{j}^{l}$. Weight $w_{ji}^{l}$ connects node $i$ of layer $l-1$ to node $j$ of layer $l$ (yes, I know the indices on $w$ looks backward). We can collect all weights and biases of layer $l$ in a matrix $\mathbf{W}^{l}$ and a vector $\mathbf{b}^{l}$ as follows:
+First things first. Let's formalize the notations. We have $L$ layers in our neural network, and therefore $L$ set's of tunable weights and biases. Layer $l$ contains $N_{l}$ nodes. Therefore, at layer $l$ we have $N_{l} \times N_{l-1}$ weights denoted by $w_{ji}^{l}$ and $N_{l}$ biases denoted by $b_{j}^{l}$. Weight $w_{ji}^{l}$ connects node $i$ of layer $l-1$ to node $j$ of layer $l$ (yes, I know the indices on $w$ looks backward). We can collect all weights and biases of layer $l$ in a matrix $\mathbf{W}^{l}$ and a vector $\mathbf{b}^{l}$ as follows:
 \begin{align*}
 &\mathbf{W}^{l} = \begin{bmatrix}
 w_{11}^{l} & \cdots & w_{1,N_{l-1}}^{l} \\
@@ -169,7 +169,7 @@ How does this little detour help us? Well, in our problem we need to reduce the 
 $$
 \mathcal{W} \leftarrow \mathcal{W} - r \frac{\partial C}{\partial \mathcal{W}}.
 $$
-Which means $\mathcal{W}$ is now updated to $\mathcal{W} - r \frac{\partial C}{\partial \mathcal{W}}$.
+Which means all the neural network parameters, $\mathcal{W}$, are now updated to $\mathcal{W} - r \frac{\partial C}{\partial \mathcal{W}}$.
 
 * Backpropagation Algorithm
 ** A recap

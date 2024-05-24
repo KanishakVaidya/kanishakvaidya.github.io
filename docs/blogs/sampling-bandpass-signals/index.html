@@ -72,29 +72,29 @@ function myFunction() {
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf48faaf">What is sampling theorem?</a></li>
-<li><a href="#org989be84">Sampling theorem for Bandpass signals</a></li>
+<li><a href="#org790e92f">What is sampling theorem?</a></li>
+<li><a href="#orga94d679">Sampling theorem for Bandpass signals</a></li>
 </ul>
 </div>
 </div>
 <script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
 
-<div id="outline-container-orgf48faaf" class="outline-2">
-<h2 id="orgf48faaf">What is sampling theorem?</h2>
-<div class="outline-text-2" id="text-orgf48faaf">
+<div id="outline-container-org790e92f" class="outline-2">
+<h2 id="org790e92f">What is sampling theorem?</h2>
+<div class="outline-text-2" id="text-org790e92f">
 <p>
 The Sampling Theorem, also known as the Nyquist-Shannon Sampling Theorem, is a fundamental concept in signal processing and digital signal theory. It provides guidelines on how to accurately represent a continuous-time signal in a discrete form. The Sampling Theorem states that in order to accurately reconstruct a continuous-time signal from its samples, the sampling frequency must be at least twice the maximum frequency present in the signal.
 </p>
 </div>
-<div id="outline-container-org6c632fb" class="outline-3">
-<h3 id="org6c632fb">Baseband signals</h3>
-<div class="outline-text-3" id="text-org6c632fb">
+<div id="outline-container-org4e3c081" class="outline-3">
+<h3 id="org4e3c081">Baseband signals</h3>
+<div class="outline-text-3" id="text-org4e3c081">
 <p>
 Baseband signals refer to signals that occupy a range of frequencies close to zero hertz (Hz). In other words, these signals have a frequency spectrum that starts from zero and extends up to a certain maximum frequency. Spectrum of a typical baseband signal look as follows:
 </p>
 
 
-<div id="org8289693" class="figure">
+<div id="orgba7caac" class="figure">
 <p><img src="./baseband-spectrum.svg" alt="baseband-spectrum.svg" class="org-svg" style="width:50%;min-width:500px;" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Typical spectrum of a baseband signal.</p>
@@ -108,15 +108,15 @@ X(f) = 0 \mbox{ for } |f| > f_{H}
 </p>
 </div>
 </div>
-<div id="outline-container-orgcde0b03" class="outline-3">
-<h3 id="orgcde0b03">Sampling theorem for baseband signals</h3>
-<div class="outline-text-3" id="text-orgcde0b03">
+<div id="outline-container-orgc01657b" class="outline-3">
+<h3 id="orgc01657b">Sampling theorem for baseband signals</h3>
+<div class="outline-text-3" id="text-orgc01657b">
 <p>
 Say the signal \(x(t)\) is sampled at frequency \(f_{s}\), then according to sampling theorem its spectrum will repeat after every \(f_{s}\) Hz.
 </p>
 
 
-<div id="orgfc7e86d" class="figure">
+<div id="org51f600e" class="figure">
 <p><img src="./baseband-sampling.svg" alt="baseband-sampling.svg" class="org-svg" style="width:90%;min-width:700px;" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Sampling a baseband signal. Sampling a baseband signal at \(f_s\), causes repetition of the main lobe of the fourier transform to repeat after every \(f_s\) Hz in frequency domain.</p>
@@ -132,15 +132,15 @@ for some scale factor \(C\) (with proper derivation, \(C = 1 / T_{s}\)). It is c
 </div>
 </div>
 
-<div id="outline-container-org5d8a18c" class="outline-3">
-<h3 id="org5d8a18c">Bandpass signals: Problem with sampling at \(2W\)</h3>
-<div class="outline-text-3" id="text-org5d8a18c">
+<div id="outline-container-org50040f7" class="outline-3">
+<h3 id="org50040f7">Bandpass signals: Problem with sampling at \(2W\)</h3>
+<div class="outline-text-3" id="text-org50040f7">
 <p>
 Now consider a bandpass signal, whose fourier transform is non-zero only between \(f_{L}\) and \(f_{H}\). So, the bandwidth is \(W = f_{H} - f_{L}\). A typical bandpass signal spectrum looks like as follows:
 </p>
 
 
-<div id="org5a0cc78" class="figure">
+<div id="org2cc627c" class="figure">
 <p><img src="./bandpass-spectrum.svg" alt="bandpass-spectrum.svg" class="org-svg" style="width:90%;min-width:700px;" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Typical spectrum of a bandpass signal.</p>
@@ -151,7 +151,7 @@ It is easy to see that this signal cannot be sampled at \(2W\). Consider the cas
 </p>
 
 
-<div id="org2e00e15" class="figure">
+<div id="org79278cb" class="figure">
 <p><img src="./bandpass-aliasing.svg" alt="bandpass-aliasing.svg" class="org-svg" style="width:w0%;min-width:550px;" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Sampling bandpass signals at \(2W\) will cause aliasing.</p>
@@ -164,15 +164,15 @@ One way to avoid this aliasing is to sample the signal at \(2f_{H}\), but this w
 </div>
 </div>
 
-<div id="outline-container-org989be84" class="outline-2">
-<h2 id="org989be84">Sampling theorem for Bandpass signals</h2>
-<div class="outline-text-2" id="text-org989be84">
+<div id="outline-container-orga94d679" class="outline-2">
+<h2 id="orga94d679">Sampling theorem for Bandpass signals</h2>
+<div class="outline-text-2" id="text-orga94d679">
 <p>
 Let, the signal \(x(t)\) be sampled at every \(T_{s}\) seconds. The samples are such that some \(n^{th}\) repetition of negative frequency lobe stops before frequency \(f_{L}\) and the \({n+1}^{th}\) frequency lobe starts after \(f_{H}\) as shown in the figure below:
 </p>
 
 
-<div id="orgec68cef" class="figure">
+<div id="org08c6979" class="figure">
 <p><img src="./optimal-sampling.svg" alt="optimal-sampling.svg" class="org-svg" style="width:50%;min-width:600px;" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Sampling bandpass signal such that \(n^{th}\) and \({(n+1)}^{th}\) repetetion of -ve frequency lobe doesn't alias with the positive frequency lobe.</p>

@@ -118,6 +118,7 @@ function myFunction() {
       :publishing-directory "~/doc/repos/kanishakvaidya.github.io/docs/blogs"
       :recursive t
       :auto-sitemap t
+      :sitemap-sort-files anti-chronologically
       :sitemap-style list
       :sitemap-function kvp/sitefunc
       :sitemap-format-entry kpv/sitemap

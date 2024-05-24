@@ -117,6 +117,7 @@ div.outline-2 {
 
 .MathJax {
     overflow-x: auto;
+    overflow-y: clip;
 }
 
 #postamble.status {

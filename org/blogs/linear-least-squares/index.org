@@ -1,0 +1,111 @@
+#+TITLE: Linear Least Squares
+#+AUTHOR: Kanishak Vaidya
+#+DATE: <2024-02-25 Tue> 
+#+OPTIONS: html-style:nil toc:1 num:nil timestamp:nil title:t ^:{}
+#+KEYWORDS: machine learning, artificial intelligence, optimization, gradient descent, linear algebra, matrix theory
+#+FILETAGS: AI/ML
+#+DESCRIPTION: Derivation of matrix solution of linear least squares. We find a linear combination of inputs that predict
+#+DESCRIPTION: outputs such that the mean square error in the given data is minimized.
+
+#+begin_export html
+<script> document.querySelectorAll("#mySideNav a#blogs")[0].classList.add("active"); </script>
+#+end_export
+
+* What's the goal here?
+Let's get right into it. We have the following data: ${(\mathbf{x}_{n}, y_{n})}_{n = 1}^{N}$, where $\mathbf{x}_{n} \in \mathbb{R}^{M}$ and $y_{n} \in \mathbb{R}$. That is, we have $N$ /input vectors/, of size $M$, and for each inpu $(\mathbf{x}_n)$ we have a corresponding output $(y_{n})$. Our goal is to find some vector $\mathbf{a} \in \mathbb{R}^{M}$ to define a linear relation between the input vectors and output value. We need
+$$
+\mathbf{x}_{n}^{T} \mathbf{a} \approx y_{n}
+$$
+There are several ways to define the /quality/ of the approximations. A very popular metric is the /mean square error/. The mean square error is defined as
+$$
+E = \frac{1}{N} \sum_{n=1}^{N} {\left(\mathbf{x}_{n}^{T}\mathbf{a} - y_{n}\right)}^{2}
+$$
+Which is the average of the squares of the errors for every given datapoint. The goal is to find some vector $\mathbf{a}$ such that $E$ is minimized.
+
+* Minimizing the error
+To describe the error term in matrix format, let's define the following matrices:
+\begin{align*}
+\mathbf{X} &\triangleq {\begin{bmatrix}
+\mathbf{x}_{1}^{T} \\
+\vdots \\
+\mathbf{x}_{n}^{T} \\
+\vdots \\
+\mathbf{x}_{N}^{T} \\
+\end{bmatrix}}_{N \times M} &
+\mathbf{y} &\triangleq {\begin{bmatrix}
+{y}_{1} \\
+\vdots \\
+{y}_{n} \\
+\vdots \\
+{y}_{N} \\
+\end{bmatrix}}_{N \times 1}
+\end{align*}
+
+With the help of these matrices, we can write the error in matrix form as follows:
+\begin{align*}
+E = \frac{1}{N}&{\| \mathbf{X}\mathbf{a} - \mathbf{y} \|}^{2} = \frac{1}{N} {\left( \mathbf{X}\mathbf{a} - \mathbf{y} \right)}^{T} {\left( \mathbf{X}\mathbf{a} - \mathbf{y} \right)} \\
+&= \frac{\mathbf{a}^{T}\mathbf{X}^{T}\mathbf{X}\mathbf{a} - \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{y} - \mathbf{y}^{T}\mathbf{X}\mathbf{a} + \mathbf{y}^{T}\mathbf{y}}{N}
+\end{align*}
+
+To choose the vector $\mathbf{a}$ that minimize the error $E$, we compute $\partial E / \partial \mathbf{a}$ and set it to zero.
+\begin{align*}
+\frac{\partial E}{\partial \mathbf{a}} &= \frac{\partial \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{X}\mathbf{a}}{\partial \mathbf{a}}  - \frac{\partial \mathbf{a}^{T}\mathbf{X}^{T}\mathbf{y}}{\partial \mathbf{a}} - \frac{\partial \mathbf{y}^{T}\mathbf{X}\mathbf{a}}{\partial \mathbf{a}} + \frac{\partial \mathbf{y}^{T}\mathbf{y}}{\partial \mathbf{a}} \\
+\end{align*}
+Let's just write each of the derivative now and prove the derivative of each term later
+\begin{align*}
+\frac{\partial E}{\partial \mathbf{a}} &= 2 \mathbf{a}^{T} \mathbf{X}^{T}\mathbf{X} - \mathbf{y}^{T}\mathbf{X} - \mathbf{y}^{T}\mathbf{X} + \mathbf{0} = \mathbf{0} \\
+&\implies \mathbf{a}^{T} \mathbf{X}^{T}\mathbf{X} = \mathbf{y}^{T}\mathbf{X} \implies \mathbf{a} = {\left(\mathbf{X}^{T}\mathbf{X}\right)}^{-1}\mathbf{X}^{T}\mathbf{y}
+\end{align*}
+
+Which gives us the least square solution in matrix form
+\begin{equation*}
+{\Large
+\bbox[10px, border: 2px solid black]{\mathbf{a} = {\left(\mathbf{X}^{T}\mathbf{X}\right)}^{-1}\mathbf{X}^{T}\mathbf{y}}
+}
+\end{equation*}
+
+* Appendix: The matrix derivatives
+Let's derivative the following two matrix derivatives:
+1. A quadratic matrix term. For vector $\mathbf{x}$ and /symmetric matrix/ $\mathbf{Q}$
+   $$
+   \frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = 2 \mathbf{x}^{T} \mathbf{Q}
+   $$
+2. A linear matrix term. For constant vector $\mathbf{c}$ and variable $\mathbf{x}$
+   $$
+   \frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{c}^{T}
+   $$
+
+#+begin_quote
+*NOTE:* We are using /Neumenator layout/ for matrix derivatives. In numerator layout, the derivative of scalar quantity $a$ with respect to a matrix $\mathbf{X}$ of size $r \times c$ has size $c \times r$. The $i, j$ entry of derivative is
+$$
+{\left[ \frac{\partial a}{\partial \mathbf{X}} \right]}_{j, i} = \frac{\partial a}{\partial \mathbf{X}_{i, j}}
+$$
+for $i = 1, 2, \cdots r$ and $j = 1, 2, \cdots c$. For more details, read [[https://en.wikipedia.org/wiki/Matrix_calculus#Numerator-layout_notation][this wikipedia article]].
+#+end_quote
+
+Now let's prove the identities.
+
+** Proof: $\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = 2 \mathbf{x}^{T} \mathbf{Q}$
+By definition,
+$$
+\mathbf{x}^{T} \mathbf{Q} \mathbf{x} = \sum_{i, j} q_{i, j} x_{i} x_{j} = \sum_{j} x_{j} \sum_{i} q_{i, j} x_{i}
+$$
+Differentiating, with respect to $k^{th}$ element of $\mathbf{x}$: $x_{k}$, we'll get
+\begin{align*}
+\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial x_{k}} &= \frac{\partial }{\partial x_{k}} \left( \sum_{j} x_{j} \sum_{i} q_{i, j} x_{i} \right) \\
+&= \frac{\partial }{\partial x_{k}} \left( x_{k} \sum_{i} q_{i, k} x_{i} + \sum_{j \neq k} x_{j} \sum_{i} q_{i, j} x_{i} \right) \\
+&= \frac{\partial }{\partial x_{k}} \left( x_{k} \left(q_{k, k} x_{k} +  \sum_{i \neq k} q_{i, k} x_{i} \right) + \sum_{j \neq k} x_{j} \left( q_{k, j} x_{k} + \sum_{i \neq k} q_{i, j} x_{i} \right) \right) \\
+&= 2 q_{k, k} x_{k} + \sum_{i \neq k} q_{i, k} x_{i} + \sum_{j \neq k} x_{j} q_{k, j} = \sum_{i}q_{i, k} x_{i} + \sum_{j} q_{k, j} x_{j} = \mathbf{x}^{T} \mathbf{Q}_{k} + \mathbf{x}^{T} {\mathbf{Q}^{T}}_{k}
+\end{align*}
+Writing this equationg for every $k$, we'll get
+$$
+\frac{\partial \mathbf{x}^{T} \mathbf{Q} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{x}^{T} \left( \mathbf{Q} + \mathbf{Q}^{T} \right) = 2 \mathbf{x}^{T} \mathbf{Q}
+$$
+Where the last equality holds for symmetric $\mathbf{Q}$.
+
+** Proof: $\frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial \mathbf{x}} = \mathbf{c}^{T}$
+This is quiet easy to show. We have
+\begin{align*}
+\mathbf{c}^{T}\mathbf{x} = c_{1}x_{1} + \cdots + c_{k}x_{k} + \cdots \implies \frac{\partial \mathbf{c}^{T} \mathbf{x}}{\partial x_{k}} = c_{k}
+\end{align*}
+Writing, for all terms in $\mathbf{x}$, we'll get the desired identity.
